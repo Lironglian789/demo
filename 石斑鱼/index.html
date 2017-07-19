@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+       <title>首页</title>
+       <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+       <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+       <script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+       <style type="text/css">
+           body{background: #F4F4F4;}
+           header{width: 100%;height:6rem;} 
+           header img{width: 100%;height: 100%;} 
+           .carousel{width: 100%;height: 15rem;position: relative;overflow: hidden;}
+           .carousel img{width: 100%;height: 15rem;}
+           .dot{position: absolute;bottom: 0.2rem;left: 45%;}
+           .dot span{display: block;width: 1rem;height: 1rem;background:white;float: left;border-radius: 50%}
+           /*导航开始*/
+           section{width: 100%;display: flex;margin: 1.5rem 0rem 0rem;}
+           section .col{width: 50%;}
+           section .col>div{width: 100%;height: 4rem;margin-bottom: 1rem;border-radius: 1rem;padding-left: 1rem;box-shadow:0rem 0.5rem 0.3rem #bbb }
+           section .col>div h1{font-size: 1.8rem;font-weight: bold;color:white;}
+           section .col>div small{font-size: 1.4rem;}
+           /*菜品、会员、店面*/
+           section .col:nth-child(1){margin-right:0.5rem;margin-left: 0.8rem;}
+           section .col:nth-child(1) div:nth-child(1){background: url(img/dishes.jpg);background-size: 100% 100%;}
+           section .col:nth-child(1) div:nth-child(1) small{color:#cc4524;}
+           section .col:nth-child(1) div:nth-child(2){background: url(img/member.jpg);background-size: 100% 100%;}
+           section .col:nth-child(1) div:nth-child(2) small{color:#03889a;}
+           section .col:nth-child(1) div:nth-child(3){background: url(img/store.jpg);background-size: 100% 100%;}
+           section .col:nth-child(1) div:nth-child(3) small{color:#c54142;}
+            /*餐位、活动、团队*/
+           section .col:nth-child(2){margin-left: 0.5rem;margin-right: 0.8rem;}
+           section .col:nth-child(2) div:nth-child(1){background: url(img/seat.jpg); background-size: 100% 100%;}
+           section .col:nth-child(2) div:nth-child(1) small{color:#097396;}
+           section .col:nth-child(2) div:nth-child(2){background: url(img/activity.jpg); background-size: 100% 100%;}
+           section .col:nth-child(2) div:nth-child(2) small{color:#8a6d02;}
+           section .col:nth-child(2) div:nth-child(3){background: url(img/team.jpg); background-size: 100% 100%;}
+           section .col:nth-child(2) div:nth-child(3) small{color:#af440e;}
+           /*团购活动*/
+           .box{width: 96%;height: 12rem;border-radius: 0.5rem;margin: 0 auto;border:0.1rem solid gray;overflow: hidden;position:relative;}
+           .box img{width: 100%;height: 100%;}
+           .box button{position: absolute;right: 2rem;bottom: 0.5rem;width: 10rem;height: 2.8rem;background: #FF7F46;border-radius: 1rem;font-size: 1.7rem;color:white;}
+           /*底部*/
+           .footer{width:100%;height:3rem;border-top:0.1rem solid gray;border-bottom:0.1rem solid #D1D1D1;display: flex;background: #F4F4F4;position: fixed;left: 0;bottom: 0;}
+           .footer>div{width:25%;height:100%;border-right:0.1rem solid gray;font-size: 1.8rem;color:#535353;text-align: center;line-height: 3rem;}
+           .footer>div:nth-child(4){border-right:none;}
+           .footer .iconfont{font-size: 2rem;color:#535353;}
+       </style>
+</head>
+<body>
+    <!-- 头部logo -->
+    <header><img src="img/logo.jpg" /></header>
+    <!-- 轮播图 -->
+    <div  class="carousel">
+        <ul>
+	        <li><img src="img/banner_01.jpg"></li>
+	        <li><img src="img/banner_01.jpg"></li>
+        </ul> 
+        <div class="dot">
+            <span style="margin-right: 1rem"></span>
+            <span></span>
+        </div>
+    </div>
+       <!-- 导航开始 -->
+    <section>
+        <div class="col">
+	        <div>
+            <a href="main.html">
+	            <h1>菜品</h1>
+	            <small>菜品展示</small>
+            </a>
+	        </div>
+	        <div>
+            <a href="#">
+	            <h1>会员</h1>
+	            <small>成为VIP</small>
+            </a>
+	        </div>
+	        <div>
+            <a href="#">
+	            <h1>店面</h1>
+	            <small>店面展示</small>
+            </a>
+	        </div>
+        </div>
+        <div class="col">
+            <div>
+              <a href="#">
+                <h1>餐位</h1>
+                <small>在想预订</small>
+              </a>
+            </div>
+            <div>
+              <a href="promotion.html">
+                <h1>活动</h1>
+                <small>最新活动</small>
+              </a>
+            </div>
+            <div>
+              <a href="team.html">
+                <h1>团队</h1>
+                <small>团队展示</small>
+              </a>
+            </div>
+        </div>
+    </section>
+    <!-- 团购活动 -->
+    <div class="box">
+        <img src="img/bread.jpg"/>
+        <button>立即参团</button>
+    </div>
+    <div class="box" style="margin: 1rem auto 4rem">
+        <img src="img/bread.jpg"/>
+        <button>立即参团</button>
+    </div>
+    <!-- 底部 -->
+    <footer class="footer">
+        <div><a href="#"><i class="iconfont icon-home2-copy"></i></a></div>
+        <div>电话</div>
+        <div>导航</div>
+        <div>分享</div>
+    </footer>
+</body>
+<script>
+    window.onload=function(){
+       document.documentElement.style.fontSize=document.documentElement.clientWidth/37.5+"px";
+       window.addEventListener("resize",function(){
+           document.documentElement.style.fontSize=document.documentElement.clientWidth/37.5+"px";
+       })
+    } 
+</script>
+</html>

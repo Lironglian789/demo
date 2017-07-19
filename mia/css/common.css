@@ -1,0 +1,131 @@
+ol,ul{list-style: none;}
+*{margin:0 auto;}
+body {font-size: 14px;color:#000; margin: 0;padding: 0;width:1420px;}
+/*头部*/
+.head1{width: 1420px;height: 35px;background: lightgray;}
+.head1 #left1{width: 200px;height: 35px;text-align: center;line-height: 35px;margin-left: 150px;
+        float: left;}
+.head1 #right1{width: 500px;height: 35px;float: right;line-height: 35px;}
+.head1 a{text-decoration: none;color: black;display: inline-block;margin-right: 15px;}
+.head1 a:hover{color: hotpink;}
+.head2{width: 1420px;height: 200px;background: white;}
+.head2 #left2 img{display: block;width: 150px;height: 150px;float: left;margin-left: 200px;
+       margin-top: 25px;}
+.head2 #right2{width: 620px;height: 80px;float: left;margin-top: 80px;margin-left:250px;position: relative;}
+.head2 #right2 input{width: 390px;height: 30px;border: 2px solid hotpink;float: left;padding-left: 10px;}
+.head2 #right2 label{width: 50px;height: 34px;background: hotpink;display: block;margin-right: 20px;
+       float: left;line-height: 34px;text-align: center;}
+.head2 #right2 .option{width: 400px;height: 245px;background: white;position: absolute;top: 33px;
+       z-index: 2;border: 1px solid lightgray;border-top:none; display: none;}
+.head2 #right2 .option a{display:block;width: 390px;margin-top: 5px;text-decoration: none;color:orangered;} 
+.head2 #right2 .option a:hover{background: lightgray;padding-left: 10px;}
+.head2 #right2 .option a span{color: gray;margin-left: 8px;}    
+.head2 #right2 .cart{width: 130px;height: 30px;border: 1px solid lightgray;line-height: 30px;
+       float: right;position: relative;}
+.head2 #right2 .cart>img{width: 30px;height: 25px;background: pink;display: block;float: left;margin-top: 3px;}
+.head2 #right2 .cart>span{width: 50px;height: 30px;display: block;float: left;text-align: center;}
+.head2 #right2 .cart #total{font-weight: bold;display: block;width: 40px;height: 25px;background: deeppink;
+        line-height: 25px;margin-top:3px;color: white;border-radius: 40%/40%;}
+.head2 #right2 .begin{width: 250px;height: 30px;position:absolute;top: 33px;right: 0px;text-align: center;
+        color: gray;border: 1px solid hotpink;line-height: 30px;display: none;}
+.head2 #right2 .after{width: 300px;position:absolute;top: 30px;right: 0px;z-index: 2;background: white;
+        padding: 10px;border: 1px solid hotpink;display: none;}
+.head2 #right2 .cart .after img{width: 70px;height: 80px;border: 1px solid lightgray;float: left;margin-top: 10px;}
+.head2 #right2 .cart .after div{width:150px;float: left;margin: 10px 0px 0px 10px;}
+.head2 #right2 .cart .after div #zong{margin-left: 10px;}
+.head2 #right2 .cart .after #danjia{color: hotpink;float:left;margin-top: 20px;}
+.head2 #right2 .cart .after button{float: right;width: 100px;height: 50px;background: hotpink;outline: none;
+        color: white;border: none;}
+.head2 #right2 ul{width:350px;float: left;}
+.head2 #right2 ul a{text-decoration: none;color: black;display: block;float: left;margin-right: 20px;
+        margin-top: 10px;}
+.head2 #right2 ul a:hover{color: hotpink;}
+
+ /*导航条*/
+.nav{width: 1420px;height: 45px;background: hotpink;}
+.nav ul{width: 600px;height: 45px;margin: 0 auto;}
+.nav ul .hover{position: relative;}
+.nav ul .hover>a{margin-right: 20px;}
+.nav ul li>a{display: block;width: 100px;height: 45px;text-align: center;line-height: 45px;float: left;
+       color: white;text-decoration: none;font-size:18px;}
+.nav ul #a1{background: deeppink;}
+.nav ul li>a:hover{background: deeppink;}
+.nav ul li a img{display: block;float: right;margin-top: 18px;transform: rotate(90deg);transition: 0.4s;}
+.nav ul .hover:hover img{transform: rotate(-90deg);} 
+.nav ul .hide{width: 100px;height: 123px;line-height: 45px;position: absolute;left: 300px;z-index: 6;top: 45px;
+        text-align: center;background: white;display: none;color:lightgray;}
+.nav ul .hide a{display: block;width: 100px;height: 40px;line-height: 40px;text-align: center;border-top: 1px dashed lightgray;
+        color: black;text-decoration: none;font-size:18px;}
+.nav ul .hide a:hover{background: hotpink;color: white;}
+
+/*三级菜单*/
+.goods{position: absolute;z-index: 4;left: 120px;top: 233px;}
+.goods h1{display: block;width: 250px;height: 50px;background: hotpink;color: white;font-size: 20px;
+	   line-height: 50px;padding-left: 20px;}
+.goods h1>img{display: block;float: right;width: 10px;height: 20px;margin-top: 15px;margin-right: 15px;
+       transform: rotate(90deg);transition: 0.4s;}
+.goods:hover  h1 img{transform: rotate(-90deg);}
+.goods .list{display: none;}
+.goods .list ul>li{width: 250px;height: 72px;padding: 8px 10px 0px;position: relative; background: white;
+       border-bottom: 1px dashed lightgray;}
+.goods .list ul li>p{color:hotpink;font-size:16px;}
+.goods .list ul li>a{text-decoration: none;color: #000000;display: block;float: left;width: 70px;}
+.goods .list ul li>a:hover{color: hotpink;}
+.content{width: 890px;height: 400px;position: absolute;z-index: 2;left: 268px;top: 0px;border: 1px solid gainsboro;
+	   background: white;display: none;}
+.content>li{width: 285px;height: 400px;float: left;margin-left: 10px;}
+.content li p{width: 260px;height: 30px;color:  black;font-size: 16px;font-weight: bolder;
+	   margin-top: 15px;border-bottom: 1px solid gainsboro;}
+.content li div a{text-decoration: none;color: black;padding-right: 18px;display: inline-block;padding-top: 10px;}
+.content li div a:hover{color: hotpink;}
+.content .img p{border: none;}
+.content .img a{display: inline-block;border: 1px solid lightgray;width: 100px;height: 90px;}
+.content li a img{width: 100%;height: 100%;}
+#content5{top: -90px;}
+#content6{top: -170px;}
+#content7{top: -250px;}
+#content8{top: -320px;}
+
+/*左右固定*/
+.fixed-left{position: fixed;left: 18px;bottom: 100px;z-index: 3;display: none;}  
+ .fixed-right{position: fixed;right: 45px;bottom: 100px;background: white;border: 1px solid lightgray;
+        z-index: 3;display: none;} 
+ .fixed-right a{display: block;width: 50px;height: 50px;border-bottom: 1px solid lightgray;text-decoration: none;
+        color:black;font-size:12px;text-align: center;}
+.fixed-right a:hover #cart{color: hotpink;}
+.fixed-right button{border: none;cursor: pointer;}
+.fixed-right a #sys{display: block;position: fixed;bottom: 124px;right: 100px;border: 1px solid hotpink;
+        border-right: none;display: none;}
+#ad{width: 40px;line-height:25px;background: lightgray;color: white;position: fixed;right: 52px;bottom:50px;
+        text-align: center;display: none;}
+
+/*底部*/
+.bottom{width:1420px;height: 560px;margin-top: 1px solid lightgray;margin-top: 15px;background: white;}
+.bottom .B1{width: 1160px;height: 140px;border-bottom: 1px solid lightgray;margin: 0 auto;}
+.bottom .B1 a{display: inline-block;margin: 13px 20px;}
+.bottom .B1 #only{margin-left: 95px;}
+#horizontal{width: 1420px;border-bottom: 1px solid lightgray;}
+.bottom .B2{width: 980px;height: 200px;margin: 0 auto;}
+.bottom .B2 li{width: 125px;height: 180px;float: left;margin-top: 20px;}
+.bottom .B2 #contact{width: 240px;}
+.bottom .B2 #follow{width: 220px;border-left: 1px solid lightgray;padding-left: 10px;}
+.bottom .B2 li p{font-weight: bold;margin-bottom: 10px;}
+.bottom .B2 li a{color: darkslategray;text-decoration: none;display: block;margin-bottom: 10px;}
+.bottom .B2 li a:hover{color: hotpink;}
+.bottom .B2 li span{display: block;margin-bottom: 10px;color: darkslategray;}
+#follow div{width: 90px;height: 140px;border: 1px solid lightgray;float: left;margin-left: 10px;}
+#follow .app img{width: 100%;height: 100%;}
+#wb,#wx{width: 90px;height: 65px;display: block;}
+#follow .ww span{position: relative;}
+#follow .ww span #weixin{position: absolute;top: -48px;right: 80px;display: none;}
+.bottom .more{width: 750px;margin: 0 auto;}
+.bottom .more a{display: block;float: left;width: 80px;border-right: 1px solid lightgray;text-decoration: none;
+    color: dimgray;text-align: center;margin-top: 25px;}
+.bottom .more a:hover{color: hotpink;}
+.bottom .licence{width: 1130px;height: 100px;margin-top: 60px;text-align: center;color: gray;
+    font-size: 10px;margin-left: 110px;}
+.bottom .licence p{margin-bottom: 8px;}
+.bottom .last{width: 330px;height: 50px;margin:0 auto;}
+.bottom .last a{display: block;float: left;text-align: center;margin-right: 10px;}
+.bottom .last p{float: left;}
+.bottom .last img{width: 100px;height: 30px;display: block;margin-top: 10px;}

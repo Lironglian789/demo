@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	</head>
+	<body>
+		<div class="container" ng-controller="m">
+			<table class="table table-bordered">
+				<tr>
+					<th>作者</th>
+					<th>日期</th>
+					<th>内容</th>
+					<th>标题</th>
+				</tr>
+				<tr ng-repeat="i in list">
+					<td>{{i.title}}</td>
+					<td>{{i.author}}</td>
+					<td>{{i.date}}</td>
+					<td>{{i.content}}</td>
+				</tr>
+			</table>
+			<button class="btn btn-block btn-success" ng-click="more()" ng-disabled="dis">加载更多</button>
+		</div>
+		<table></table>
+	</body>
+	<script src="js/angular.js"></script>
+	<script type="text/javascript">
+		angular.module("app",["ng"]).controller("m",function($http,$scope){
+			$http({
+				method:"GET",
+				url:"js/data.json",
+			}).then(function success(response){
+				arr=response.data.list;
+				var arr1=arr.splice(0,5)
+				$scope.list=arr1;
+				$scope.more=function(){
+					var add=arr.splice(0,5);
+					console.log(arr)
+					$scope.list=$scope.list.concat(add);
+					if(arr.length==0){
+						$scope.dis=true;
+					}
+			    }
+			})
+		})
+	</script>
+</html>

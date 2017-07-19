@@ -1,0 +1,107 @@
+.access{width: 450px;height: 50px;line-height: 50px;margin-left: 160px;}
+.access a{text-decoration: none;color: #000000;}
+.access a:hover{color: deeppink;}
+
+/*加入购物车*/
+.magnified{width: 1080px;height: 490px;margin: 0 auto;}
+.magnified .add{float:left;margin-left: 40px;width: 630px;}
+.magnified .add>a{display: block;float: right;margin-left: 5px;}
+.magnified .add p{font-size: 18px;margin-top: 20px;}
+.magnified .add .p2{font-size: 14px;margin:5px 0px;}
+.magnified .add p a{text-decoration: none;color:#000}
+.magnified .add p a:hover{color: hotpink;}
+.magnified .add p #image{border: 1px solid deeppink;}
+.magnified .add p #jiage{color: hotpink;font-size: 20px;padding-left: 30px;padding-right:10px ;}
+.magnified .add p #bao{background: orangered;color: white;font-size: 14px;margin-left:30px;padding: 0px 4px;}
+.magnified .add .choose span{display: block;float: left;margin-right: 30px;margin-top: 10px;}
+.magnified .add p button{width: 40px;height: 30px;font-size: 20px;float: left;cursor: pointer;}
+.magnified .add p input{width: 40px;height: 27px;float:left;text-align: center;}
+.magnified .add p #sl{float: left;margin-right: 30px;}
+.magnified .add p #star{margin-left: 27px;}
+.magnified .add .tianjia{width: 224px;height: 55px;background:deeppink;outline: none;margin-top: 15px;
+    border: none;cursor: pointer;color: white;font-size: 20px;float: left;margin-right: 15px;}
+    
+/*购物车飞入动画*/
+.magnified .add .fly{font-weight: 600;position: absolute;left: 610px;top: 668px;display: none;
+    animation: frames 1s linear;}
+@keyframes frames{0%{background: deeppink;}20%{background: red;}40%{background: yellow;}
+    60%{background: greenyellow;}80%{background: deeppink;}100%{background: purple;top: 90px;
+	left: 1050px;transform: scale(0,0) rotate(1800deg);}}
+.magnified .add div img{border: 1px solid lightgray;display: block;height: 55px;margin-top: 15px;}
+.magnified .add ul{list-style-image: url(../img1/disc.png);list-style-position: inside;color: #666666;
+    position: relative;}
+.magnified .add ul li{margin-right: 8px;}
+.magnified .add ul span{border: 1px solid lightgray;width: 320px;display: block;position: absolute;
+    z-index: 2;display: none;}
+.magnified .add ul .sp1{right: 30px;top: 20px;height: 30px;line-height: 30px;}
+.magnified .add ul .sp2{width: 340px;height: 100px;padding-top: 15px;}
+
+/*商品详情-tab切换开始*/
+/*商品详情*/
+.box{margin-left: 160px;margin-top: 50px;}
+.box #list{width: 860px;height: 50px;line-height: 50px;background: hotpink;color: white;font-size: 15px;}
+.box #list li{float: left;padding: 0px 30px;cursor: pointer;}
+.box #list .sel{background: deeppink;}
+.box #content{width: 860px;border: 1px solid lightgray;margin-top: 15px;}
+.box #content .title{font-weight: bold;padding-right: 30px;}
+.box #content #details p>span{padding-right: 30px;}
+.box #content #details img{float: left;}
+.box #content #details{height: 5110px;padding: 20px;}
+.box #content .hidden{display: none;}
+
+/*蜜芽圈*/
+.box #content #evaluate .div1{display: block;height: 52px;border-bottom: 1px solid lightgray;padding: 0px 20px;}
+.box #content #evaluate #p1{float: left;margin-top: 18px;margin-right: 10px;}
+.box #content #evaluate #p2{float: right;margin-top: 18px;}
+.box #content #evaluate #evaluate1{background: bisque;}
+.box #content #evaluate #evaluate2{background: aliceblue;}
+.box #content #evaluate #evaluate3{background: powderblue;}
+.box #content #evaluate #evaluate4{background: lemonchiffon;}
+.box #content #evaluate #evaluate5{background: mistyrose;}
+.box #content #evaluate .uncover{display: none;}
+.box #content #evaluate .buyer{padding: 15px 20px;border-bottom: 1px solid lightgray;}
+.box #content #evaluate .buyer>img{float:left;margin-top: 0px;}
+.box #content #evaluate .buyer p{margin: 15px 0px;}
+.box #content #evaluate .buyer .color{color: hotpink;}
+.box #content #evaluate .page{width:860px;height: 80px;}
+.box #content #evaluate .page div{float: right;margin-top: 15px;}
+.box #content #evaluate .page div button{width: 40px;height: 40px;background: whitesmoke;outline: none;}
+.box #content #evaluate .page .pink{background: deeppink;}
+
+/*蜜芽优势*/
+.box #content #advantage{margin-left: 15px;height:920px;}
+.mia_advantage{height: 70px;padding: 15px 0 5px 0;}
+.mia_advantage li {display: block;float: left;margin: 0 0 0 11px;width: 80px;height: 80px;}
+.mia_advantage li span {display: block;width: 80px;height: 80px;cursor: pointer;
+    background: url(../img1/mia1.png) no-repeat;}
+.mia_advantage li span.myys1{background-position:-22px 0px ;}
+.mia_advantage li span.myys2{background-position:-114px 0px ;}
+.mia_advantage li span.myys3{background-position:-208px 0px ;}
+.mia_advantage li span.myys4{background-position:-298px 0px ;}
+.mia_advantage li span.myys5{background-position:-385px 0px ;}
+.mia_advantage li span.myys6{background-position:-478px 0px ;}
+.mia_advantage li span.myys7{background-position:-568px 0px ;}
+.mia_advantage li span.myys8{background-position:-660px 0px ;}
+.mia_advantage li.mia_current span.myys1 {background-position:-22px -90px;}
+.mia_advantage li.mia_current span.myys2{background-position:-112px -90px ;}
+.mia_advantage li.mia_current span.myys3{background-position:-203px -90px ;}
+.mia_advantage li.mia_current span.myys4{background-position:-293px -90px ;}
+.mia_advantage li.mia_current span.myys5{background-position:-383px -90px ;}
+.mia_advantage li.mia_current span.myys6{background-position:-473px -90px ;}
+.mia_advantage li.mia_current span.myys7{background-position:-563px -90px ;}
+.mia_advantage li.mia_current span.myys8{background-position:-655px -90px ;}
+.box #content #advantage #C{height: 700px;}
+.box #content #advantage #C div img{float: left;}
+.box #content #advantage #C .yincang{display:none;}
+.box #content #advantage a{text-decoration: none;}
+.box #content #advantage a button{display: block;width: 800px;height:55px;line-height: 55px;color: white;
+    font-size: 22px;text-align: center;background:dimgray;margin-top: 20px; border: none;outline: none;}
+    
+/*问题咨询*/
+.box #content #question{margin: 0px 20px 20px 20px;}
+.box #content .q{font-weight: bold;margin-top: 20px;}
+.box #content #question .q>span{color: hotpink;}
+.box #content #question .a{margin-top: 10px;}
+.box #content #question .a>span{color: deepskyblue;}
+
+    

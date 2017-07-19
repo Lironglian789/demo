@@ -1,0 +1,140 @@
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<style>
+	*{margin:0 auto;}
+	/*头部*/
+	header{display: flex;justify-content: center;}
+    header div{margin-top: 1rem;}
+    header div input{width: 15rem;height: 2.5rem;border:0.05rem solid #FA9474;border-radius: 1rem;padding-left: 1rem;font-size: 1.4rem;margin: 0rem 4rem 0rem;}
+    header div .iconfont{font-size: 2rem;color: #FC9474;}
+	/*导航条*/
+	nav{width:100%;height:3rem;border:0.1rem solid #C6C6C4;background: #F8F8F8;margin: 1rem auto 1.5rem;}
+    nav ul{display: flex;width: 100%;}
+    nav ul>li{width: 25%;height:3rem;border-right:0.1rem solid #C6C6C4;font-size: 1.4rem;color:#535353;text-align: center;line-height: 3rem;}
+    nav ul>li:nth-child(1){background: #FFFFFF;}
+    nav ul>li:nth-child(4){border-right:none;}
+    nav ul>li .iconfont{font-size: 1.2rem;color:#c6c6c4;padding-left: 0.8rem;}
+    section{width: 94%;}
+    section .tupian{margin: 1rem 0rem;}
+    section .img{width: 100%;}
+    section p{font-size: 1.3rem;color: #C2C2C2;}
+    section p button{width: 3.5rem;height: 1.8rem;background: #F7F8F7;border: 0.1rem solid gainsboro;color: #A2A2A2;}
+    section p span{font-weight: 500;color: #A7A7A7;}
+    section>button{width: 5rem;height: 2rem;background: #FCA73A;color: #fff;font-size: 1.5rem;margin-top: 0.5rem;}
+    section .check{width: 2.5rem;height: 2.5rem;background: #fff;border-radius: 50%;text-align: center;line-height: 2.5rem;background: red;}
+    /*评论区*/
+   .box{width: 100%;height: 3rem;padding-bottom:5rem;}
+   .box ul{width: 94%;height: 3rem;border: 0.1rem solid #C6C6C4;background: #F8F8F8;line-height: 3rem;margin: 2rem auto 1rem;}
+   .box ul li:nth-child(1){width: 8rem;height: 3rem;border-right: 0.1rem solid #C6C6C4;float: left;text-align: center;}
+   .box ul li:nth-child(2){width: 6rem;height: 3rem;float: right;color: #FE6732;}
+   .box ul li .iconfont{font-size: 1.2rem;}
+   .box .item{padding-left: 1rem;margin-bottom: 0.5rem;}
+   .box .item small{color: #959595;}
+   .box .item small .iconfont{color: #FE6732;}
+   .box .item h5{color: #555555;}
+   .box form input,textarea{display: block;width: 94%;margin: 0 auto;border-radius: 0.3rem;}
+   .box form .name,textarea{border: 0.1rem solid #FE6732;}
+   .box form textarea{margin: 0.5rem auto;}
+   .box form input[type=submit]{background: #FE6732;color: #FFFFFF;margin-bottom: 4rem;}
+</style>
+
+<!-- 头部 -->
+<header>
+		<div><i class="iconfont icon-sousuo"></i></div>
+		<div><input type="text" placeholder="寻找菜品、店面"></div>
+		<div><i class="iconfont icon-zui28x28icon60"></i></div>
+    
+</header> 
+<!--导航条-->
+<nav>
+    <ul>
+      <li>全部<i class="iconfont icon-icon-copy-copy-copy"></i></li> 
+      <li >特色菜<i class="iconfont icon-icon-copy-copy-copy"></i></li>
+      <li >店长推荐<i class="iconfont icon-icon-copy-copy-copy"></i></li>
+      <li >精品上市<i class="iconfont icon-icon-copy-copy-copy"></i></li>
+    </ul>
+</nav>
+<!--商品详情-->
+<section>
+	<p>
+    	<button ui-sref="dishes">返回</button>
+    	<span>{{atitle}}</span>
+    </p>
+    <div class="tupian"><img ng-src="img/{{aimagelg}}.png" class="img" /></div>
+    <div>
+    	<p>单价：<span>{{aprice}}</span></p>
+        <p>VIP：<span>{{aVIP}}</span></p>
+        <p>制作时间：<span>{{atime}}</span></p>
+        <p>可获积分：<span>{{apoints}}</span></p>
+        <p>特点：<span>{{aspecialty}}</span>回味无穷~</p>
+    </div>
+    <button>点菜</button>
+    <!--<div class="check"><i class="iconfont icon-gou"></i></div>-->
+</section>
+<div class="box">
+	<ul>
+		<li>客户评价</li>
+		<li><i class="iconfont icon-pinglun1">我要评价</i></li>
+	</ul>
+	<!--客户评论区-->
+	<div class="comment">
+		<div class="item">
+			<small>
+				<i class="iconfont icon-pinglun"></i>
+				<span>蓝君言</span>
+			    <time>5分钟前</time>
+		    </small>
+		   <h5>这个菜我每次必点，绝的对好吃~</h5>
+		</div>
+		<div class="item">
+			<small>
+				<i class="iconfont icon-pinglun"></i>
+				<span>蓝君言</span>
+			    <time>5分钟前</time>
+		    </small>
+		   <h5>这个菜我每次必点，绝的对好吃~</h5>
+		</div>
+		<div class="item">
+			<small>
+				<i class="iconfont icon-pinglun"></i>
+				<span>蓝君言</span>
+			    <time>5分钟前</time>
+		    </small>
+		   <h5>这个菜我每次必点，绝的对好吃~</h5>
+		</div>
+		<div class="item">
+			<small>
+				<i class="iconfont icon-pinglun"></i>
+				<span>蓝君言</span>
+			    <time>5分钟前</time>
+		    </small>
+		   <h5>这个菜我每次必点，绝的对好吃~</h5>
+		</div>
+		<div class="item">
+			<small>
+				<i class="iconfont icon-pinglun"></i>
+				<span>蓝君言</span>
+			    <time>5分钟前</time>
+		    </small>
+		   <h5>这个菜我每次必点，绝的对好吃~</h5>
+		</div>
+		<div class="item">
+			<small>
+				<i class="iconfont icon-pinglun"></i>
+				<span>蓝君言</span>
+			    <time>5分钟前</time>
+		    </small>
+		   <h5>这个菜我每次必点，绝的对好吃~</h5>
+		</div>
+	</div>
+	<ul>
+		<li>我要评价</li>
+		<li style="width: 9rem;"><i class="iconfont icon-pinglun1">看看别人的评价</i></li>
+	</ul>
+	<!--提交评论-->
+	<form>
+		<input type="text" placeholder="昵称" class="name"/>
+		<textarea placeholder="请输入您的评价" rows="4"></textarea>
+		<input type="submit"  value="提交"/>
+	</form>
+</div>
+	

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+body{ background:black;}
+#c1{ background:white;}
+</style>
+<script>
+
+window.onload = function(){
+    var oC = document.getElementById('c1');
+    var oGC = oC.getContext('2d');
+    
+    var setArr = [];   //收集所有元素的集合(绘制的图形)
+    
+    setInterval(function(){
+        
+        oGC.clearRect(0,0,oC.width,oC.height);
+        
+        for(var i=0;i<setArr.length;i++){
+            setArr[i].r += 1;
+            setArr[i].c4 -= 0.01;
+            if( setArr[i].c4 <= 0 ){
+                setArr.splice(i,1);
+            }
+        }
+        
+        for(var i=0;i<setArr.length;i++){
+            oGC.beginPath();
+            oGC.fillStyle = 'rgba('+setArr[i].c1+','+setArr[i].c2+','+setArr[i].c3+','+setArr[i].c4+')';
+            oGC.moveTo(setArr[i].x , setArr[i].y);
+            oGC.arc( setArr[i].x , setArr[i].y , setArr[i].r , 0 , 360*Math.PI/180,false );
+            oGC.closePath();
+            oGC.fill();
+        }    
+        
+    },1000/60);
+    
+    setInterval(function(){
+        
+        var x = Math.floor(Math.random()*oC.width);
+        var y = Math.floor(Math.random()*oC.height);
+        var r = 10;
+        var c1 = Math.floor(Math.random()*256);
+        var c2 = Math.floor(Math.random()*256);
+        var c3 = Math.floor(Math.random()*256);
+        var c4 = 1;
+        
+        setArr.push({
+            x : x,
+            y : y,
+            r : r,
+            c1 : c1,
+            c2 : c2,
+            c3 : c3,
+            c4 : c4
+        });
+        
+    },500);
+    
+};
+
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="500" height="500"></canvas>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>记事本</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<style>
+			th,td{text-align: center;}
+			
+		</style>
+	</head>
+	<body>
+		<textarea id="txt" rows="4" cols="35"></textarea><br />
+		<button id="save" class="btn btn-success">存储</button>
+		<button id="read" class="btn btn-success">读取</button>
+		<button id="change" class="btn btn-success">修改</button>
+		<button id="del" class="btn btn-success">删除</button>
+		<button id="clear" class="btn btn-success">清除</button>
+		<div id="data"></div>
+		<input type="hidden" id="myKey"/>
+	</body>
+	<script type="text/javascript">
+		var txt=document.getElementById("txt");
+		var save=document.getElementById("save");
+		var read=document.getElementById("read");
+		var change=document.getElementById("change");
+		var del=document.getElementById("del");
+		var clear=document.getElementById("clear");
+		var data=document.getElementById("data");
+		var myKey=document.getElementById("myKey");
+		//存储
+		save.onclick=function(){
+			if(/^\s*$/.test(txt.value)){
+				alert("内容不能为空");
+			}else{
+				var key=myKey.value;
+				if(key==""){
+					key=new Date().getTime();
+				}
+			    localStorage.setItem(key,txt.value);
+			    txt.value="";
+			    myRead();
+			}
+		}
+		//读取
+		read.onclick=myRead;
+		function myRead(){
+           var table='<table class="table"><tr><th></th><th>key</th><th>value</th></tr>';
+            for(var i=0;i<localStorage.length;i++){
+			var key=localStorage.key(i);
+			var value=localStorage.getItem(key);
+			table+='<tr><td><input type="radio" name="selected"/></td><td>'+key+'</td><td>'+value+'</td></tr>';
+			}
+            table+="</table>";
+            data.innerHTML=table;
+		}
+		//删除
+		del.onclick=function(){
+			var selArr=document.getElementsByName("selected");
+			for(var i=0;i<selArr.length;i++){
+				if(selArr[i].checked){
+					var key=localStorage.key(i);
+					localStorage.removeItem(key);
+				}
+			}
+			myRead();
+		}
+		//清除
+		clear.onclick=function(){
+			localStorage.clear();
+			data.innerHTML="";
+		}
+		//修改
+		change.onclick=function(){
+			var selArr=document.getElementsByName("selected");
+			for(var i=0;i<selArr.length;i++){
+				if(selArr[i].checked){
+					var key=localStorage.key(i);
+					myKey.value=key;
+					var val=localStorage.getItem(key);
+					txt.value=val;
+				}
+			}
+		}
+	</script>
+</html>

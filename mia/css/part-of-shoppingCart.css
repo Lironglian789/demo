@@ -1,0 +1,77 @@
+body{font-size: 14px;}
+*{padding: 0;}
+ul ol{list-style: none;}
+#logo{float: left;margin-left: 200px;margin-top:20px;}
+#bread{float: right;margin-right:200px ;margin-top:20px;}
+.container{width: 980px;margin: 0 auto;}
+.container >p{width: 140px;font-size:25px;padding-bottom: 10px;border-bottom: 2px solid deeppink;margin: 0;}
+.container >ul{width: 980px;height: 60px;border-top: 2px solid #f2f2f0;}
+.container >ul li{margin-top: 20px;border-left: 1px solid darkgray;float: left;width: 120px;text-align: center;}
+.container >ul #l1{;border-left: none;}
+.container >ul #l1 input{width: 23px;height: 23px;float: left;margin-left: 45px;}
+.container >ul #l2{border-left: none;padding: 0px 60px;}
+
+/*添加的商品*/
+.container .cart-content{width: 980px;border: 1px solid lightgray;}
+.container .cart-content>div{width: 935px;height: 55px;line-height: 55px;background: whitesmoke;
+    font-size: 18px;padding-left: 45px;}
+.container .cart-content input{width: 23px;height: 23px;float: left;}
+.container .cart-content>p{color: orangered;margin: 10px 0px;margin-left: 45px;}
+.container .cart-content>p #s1{color: white;background: orangered;padding: 5px 10px;}
+.container .cart-content>p a{text-decoration: none;color: orangered;margin-left: 20px;}
+.container .cart-content .add-goods{margin: 15px 45px 0px;height: 150px;}
+.add-goods li{float: left;height: 90px;width: 100px;text-align: center;margin-top: 25px;padding-top: 30px;}
+.add-goods .li1{width: 450px;text-align: left;padding-top: 0px;position: relative;}
+.add-goods .li1>input{margin-top: 30px;}
+.add-goods .li1 img{display:block;width: 80px;height: 80px;float: left;margin: 0px 20px;border: 1px solid lightgray;}
+.add-goods .li1 span{display: block;padding-top: 10px;}
+.add-goods .li1 a{text-decoration: none;color: #000000;}
+.add-goods .li1 a:hover{color: deeppink;}
+.add-goods .li1 .enlarge{display:none; width:409px;height: 409px;position: absolute;top: 0px;left: 105px;z-index: 3;
+    box-shadow: 5px 5px 3px #888888}
+.add-goods .li2{width: 100px;}
+.add-goods .li2 del{color: darkslategrey;}
+.add-goods .li3{width: 110px;padding-left: 20px;position: relative;}
+.add-goods .li3 span{display: block;width: 80px;height: 30px;background: ;}
+.add-goods .li3 input{width: 30px;height: 30px;background: whitesmoke;outline: none;text-align: center;}
+.add-goods .li3 .txt{height: 27px;border-left: none;border-right: none;}
+.add-goods .li3 .change{position: absolute;width: 120px;height: 25px;border: 1px solid #FB5B71;color: coral;background: #FFFACD;
+    line-height: 25px;text-align: center;top: -5px;left:0px;display: none;}
+.add-goods .li4{color: deeppink;}
+.add-goods .li5{text-align: right;cursor: pointer;}
+.add-goods .li5 a{text-decoration: none;color: darkslategrey;}
+.add-goods .li5 a:hover{color: deeppink;}
+
+/*点击去结算框*/
+.container .go{width: 980px;height: 50px;border: 1px solid lightgray;margin: 30px 0px;line-height: 50px;
+    position: relative;}
+.container .go input{width: 23px;height: 23px;float: left;margin: 15px 5px 0px 45px;}
+.container .go>span{padding-right: 40px;}
+.container .go>p{width: 150px;height: 25px;border: 1px solid #FB5B71;color: coral;background: #FFFACD;
+    line-height: 25px;text-align: center;display: none;}
+.container .go #remind1{position: absolute;top: -15px;left: 75px;}
+.container .go #remind2{position: absolute;top: -15px;left: 175px;}
+.container .go #remind3{width: 170px;position: absolute;top: -15px;left: 235px;}
+.container .go a{padding-right: 10px;text-decoration: none;color: darkslategray;cursor: pointer;}
+.container .go a:hover{color: deeppink;}
+.container .go button{border: none;width: 100px;height: 50px;float: right;outline: none;font-size: 20px;
+    color: white;background:#333333;}
+.container .go #quantity,#total{color: red;}
+
+/*购物车为空时*/
+.empty{width:1000px;height: 240px;background: white;margin-top: 30px;position: relative;display: none;}
+.empty img{position: absolute;top: 50px;left:100px}
+.empty .p1{width: 580px;height: 60px;font-size: 30px;color: #ccc;margin-left:250px;padding: 80px 0px 15px 0px;}
+.empty .p2{margin-left:250px;}
+.empty .p2 a{text-decoration: none;color: deeppink;}
+
+/*删除商品提示*/
+.alert{position:fixed;z-index:10;left:0;top:0;opacity: 0.8;display: none;}
+#div{width: 380px;height:190px;background: white;position: fixed;top: 250px;left: 500px;font-size: 16px;
+    border: 3px solid #939393;z-index: 15;padding: 0px;display: none;color: #979797;}
+#div #dtitle{display: block;width: 380px; height: 30px; line-height: 30px; background-color: rgb(247, 247, 247);
+    border-radius: 0px;}
+#div p{text-align: center;margin: 20px 0px;}
+#div span{display: inline-block;width: 80px;height: 30px;border: 1px solid lightgray;text-align: center;
+    line-height: 30px;border-radius: 8px;cursor: pointer;}
+#div #confirm{margin:0px 20px 0px 100px;background: deeppink;color: white;}

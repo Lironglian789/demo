@@ -1,0 +1,31 @@
+*{margin: 0 auto;padding: 0;}
+body{font-size: 12px;background: #f2f2f0;color: #666;}
+a{text-decoration: none;color: #666;display: block;}
+a:hover{color:deeppink ;}
+
+/*标题*/
+#helptitle{width: 1000px;height: 65px;line-height: 65px;}
+#helptitle h3{color: #f450a2;font-size: 20px;font-weight: 400;padding-right: 10px;float:left;}
+#helptitle span{display:block;float: left;}
+
+/*左侧导航*/
+.wrapper{width: 1000px;position: relative;height: 3550px;}
+.wrapper .left{width: 150px;border: 1px solid #e6e6e6;background: #fff;margin: 0px;}
+.wrapper .left .sub-title{height: 32px;background: #e8e8e8;line-height: 30px;padding-left: 10px;
+    color: #000;font-weight: 700;font-size: 13px;border-top: 1px solid #dadada;border-bottom: 1px solid #dadada;}
+.wrapper .left ul>li>a{font-weight: 700;}
+.wrapper .left ul .switch{width: 130px;height: 45px;line-height: 45px;border-bottom:1px dashed #e6e6e6;cursor: pointer;}
+.wrapper .left ul .switch>span{display:block;float: left;width: 10px;height: 10px;border: 1px solid #e6e6e6;
+    line-height: 10px;text-align: center;margin-top: 17px;margin-right: 8px;cursor: pointer;}
+.wrapper .left ul .fold{display: none;}
+.wrapper .left ul ol{padding-bottom: 15px;}
+.wrapper .left ul ol li{padding-top: 10px;margin-left: 28px;}
+.wrapper .left ul ol .help-current{font-weight: 700;color: #C71585;}
+
+/*右侧内容*/
+.wrapper .right{width: 810px;border: 1px solid #e6e6e6;background: #fff;position: absolute;top: 0px;right: 0px;}
+.wrapper .right>div{width: 790px;padding-left: 20px;}
+.wrapper .right .breadCrumbs{height: 50px;line-height: 50px;border-bottom: 2px solid #f450a2;}
+.wrapper .right .help-content p{width: 748px;}
+.wrapper .right .help-content .steps{margin: 30px auto;}
+.wrapper .right .help-content .step-content{margin: 20px auto;line-height: 20px;}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		 <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<style>
+			*{margin: 0;padding: 0;}
+			.container div{width: 100%;height: 15rem;}
+			.container #logo{width: 100%;height: 7rem;}
+			.container div img{width: 100%;height: 100%;}
+			.container h3{font-size: 1.8rem;color:#929292;width: 6rem;margin: 1rem auto;font-weight: normal;}
+			.container>p{font-size: 1.4rem;color:#929292;padding: 0rem 2rem;}
+		     /*底部*/
+            .footer{width:100%;height:3rem;border-top:0.1rem solid gray;border-bottom:0.1rem solid gray;display: flex;background: #F4F4F4;position: fixed;left: 0;bottom: 0;}
+            .footer>div{width:25%;height:100%;border-right:0.1rem solid gray;font-size: 1.4rem;position: relative;text-align: center;line-height: 3rem;}
+            .footer>div ul{position: absolute;border: 0.1rem solid gray;display: none;background: #F4F4F4;}
+            .footer>div .show{display: block;}
+            .footer>div li{width: 4rem;height: 2rem;font-size: 1.2rem;line-height: 2rem;text-align: center;}
+            .footer>div:nth-child(2) ul{left: 15%;top: -8.5rem;}
+            .footer>div:nth-child(3) ul{left: 8%;top: -4.5rem;}
+            .footer>div:nth-child(3) ul li{width: 5rem;}
+            .footer>div:nth-child(4) ul{left: 0;top: -3.8em;}
+            .footer>div:nth-child(4) ul li{width: 7rem;} 
+            .footer>div:nth-child(5) ul{left: 10%;top: -2.5rem;}
+            .footer>div:nth-child(5){border-right:none;}
+            .footer>div:nth-child(5) ul li{width: 5rem;} 
+            .footer .iconfont{font-size: 2rem;color:#535353;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div id="logo"><img src="img/logo.jpg"/></div>
+			<div><img src="img/team1.png"/></div>
+			<h3>企业文化</h3>
+			<p>小坛子商务信息咨询有限公司成立于沈阳，是东北地区唯一一家对企业进行网络营销实战培训的机构，致力于网络领域中成功管理方法的研究，
+			     探寻成功网商成长中的实战方法，为成长中企业的不断创新提供专业，贴身的网络咨询服务。
+			</p>
+			<h3>团队展示</h3>
+			<div><img src="img/team2.png"/></div>
+			<p style="margin: 1rem auto 4rem;">小坛子商务信息咨询有限公司成立于沈阳，是东北地区唯一一家对企业进行网络营销实战培训的机构，致力于网络领域中成功管理方法的研究，
+			     探寻成功网商成长中的实战方法，为成长中企业的不断创新提供专业，贴身的网络咨询服务。
+			</p>
+		</div>
+		<footer class="footer">
+	    <div>
+	    	<a href="index.html"><i class="iconfont icon-home2-copy"></i></a>
+	    </div>
+	    <div>
+	      	<p ui-sref="dishes">菜品</p>
+	      	<ul>
+	      		<li ng-click="huoguo()">火锅</li>
+	      		<li ng-click="difangcai()">地方菜</li>
+	      		<li ng-click="xican()">西餐</li>
+	      		<li ng-click="kuaican()">快餐</li>
+	      	</ul>
+	    </div>
+	    <div>
+	      	<p>订位</p>
+	      	<ul>
+	      		<li ui-sref="book">我要订位</li>
+	      		<li ui-sref="vipCenter">会员中心</li>
+	      	</ul>
+	    </div>
+	    <div>
+	      	<p>VIP</p>
+	      	<ul> 
+	      		<li ui-sref="vip">我要成为VIP</li>
+	      		<li ui-sref="points">积分兑换</li>
+	      	</ul>
+	    </div>
+	    <div>
+	      	<p>点单</p>
+	      	<ul>
+	      		<li>我的订单</li>
+	      	</ul>
+	    </div>
+    </footer>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			document.documentElement.style.fontSize=document.documentElement.clientWidth/37.5+"px";
+			window.addEventListener("resize",function(){
+			    document.documentElement.style.fontSize=document.documentElement.clientWidth/37.5+"px";	
+			})
+		}
+	</script>
+</html>

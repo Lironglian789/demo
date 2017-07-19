@@ -1,0 +1,144 @@
+//安全防诈骗
+$(".unfold:eq(0)").click(function(){
+	$(this).hide();
+	$(".fold:eq(0)").stop().show();
+	$(".fold-content:eq(0)").slideToggle(800);
+})
+$(".fold:eq(0)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(0)").stop().show();
+	$(".fold-content:eq(0)").slideToggle(800);
+})
+//玩转官网
+$(".unfold:eq(1)").click(function(){
+	$(this).hide();
+	$(".fold:eq(1)").show();
+	$(".fold-content:eq(1)").slideToggle(800);
+})
+$(".fold:eq(1)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(1)").show();
+	$(".fold-content:eq(1)").slideToggle(800);
+})
+//购物指南
+$(".unfold:eq(2)").click(function(){
+	$(this).hide();
+	$(".fold:eq(2)").show();
+	$(".fold-content:eq(2)").slideToggle(800);
+})
+$(".fold:eq(2)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(2)").show();
+	$(".fold-content:eq(2)").slideToggle(800);
+})
+//支付方式
+$(".unfold:eq(3)").click(function(){
+	$(this).hide();
+	$(".fold:eq(3)").show();
+	$(".fold-content:eq(3)").slideToggle(800);
+})
+$(".fold:eq(3)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(3)").show();
+	$(".fold-content:eq(3)").slideToggle(800);
+})
+//配送相关
+$(".unfold:eq(4)").click(function(){
+	$(this).hide();
+	$(".fold:eq(4)").show();
+	$(".fold-content:eq(4)").slideToggle(800);
+})
+$(".fold:eq(4)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(4)").show();
+	$(".fold-content:eq(4)").slideToggle(800);
+})
+//售后服务
+$(".unfold:eq(5)").click(function(){
+	$(this).hide();
+	$(".fold:eq(5)").show();
+	$(".fold-content:eq(5)").slideToggle(800);
+})
+$(".fold:eq(5)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(5)").show();
+	$(".fold-content:eq(5)").slideToggle(800);
+})
+//服务条款
+$(".unfold:eq(6)").click(function(){
+	$(this).hide();
+	$(".fold:eq(6)").show();
+	$(".fold-content:eq(6)").slideToggle(800);
+})
+$(".fold:eq(6)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(6)").show();
+	$(".fold-content:eq(6)").slideToggle(800);
+})
+//掌上蜜芽
+$(".unfold:eq(7)").click(function(){
+	$(this).hide();
+	$(".fold:eq(7)").show();
+	$(".fold-content:eq(7)").slideToggle(800);
+})
+$(".fold:eq(7)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(7)").show();
+	$(".fold-content:eq(7)").slideToggle(800);
+})
+//关于蜜芽
+$(".unfold:eq(8)").click(function(){
+	$(this).hide();
+	$(".fold:eq(8)").show();
+	$(".fold-content:eq(8)").slideToggle(800)
+})
+$(".fold:eq(8)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(8)").show();
+	$(".fold-content:eq(8)").slideToggle(800);
+})
+//联系我们
+$(".unfold:eq(9)").click(function(){
+	$(this).hide();
+	$(".fold:eq(9)").show();
+	$(".fold-content:eq(9)").slideToggle(800)
+})
+$(".fold:eq(9)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(9)").show();
+	$(".fold-content:eq(9)").slideToggle(800);
+})
+//蜜芽招商
+$(".unfold:eq(10)").click(function(){
+	$(this).hide();
+	$(".fold:eq(10)").show();
+	$(".fold-content:eq(10)").slideToggle(800)
+})
+$(".fold:eq(10)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(10)").show();
+	$(".fold-content:eq(10)").slideToggle(800);
+})
+//友情链接
+$(".unfold:eq(11)").click(function(){
+	$(this).hide();
+	$(".fold:eq(11)").show();
+	$(".fold-content:eq(11)").slideUp(800)
+})
+$(".fold:eq(11)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(11)").show();
+	$(".fold-content:eq(11)").slideDown(800);
+})
+//相关信息
+$(".unfold:eq(12)").click(function(){
+	$(this).hide();
+	$(".fold:eq(12)").show();
+	$(".fold-content:eq(12)").slideToggle(800)
+})
+$(".fold:eq(12)").click(function(){
+	$(this).hide();
+	$(".unfold:eq(12)").show();
+	$(".fold-content:eq(12)").slideToggle(800);
+})
+

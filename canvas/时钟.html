@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{margin:0 auto;width: 500px;height: 500px;}
+			canvas{border:2px solid #000;}
+			span{width:500px;height:30px;font-size: 30px;
+            color:mediumpurple;display: inline-block;text-align: center;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<canvas id="can" width="600" height="600"></canvas>
+			<span></span>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		var canvas=document.getElementById("can");
+		var context=canvas.getContext("2d");
+		//获取系统当前时间
+		function clock(){
+			context.clearRect(0,0,600,600);
+			var time=new Date();
+			var year=time.getFullYear();
+			var month=time.getMonth()+1;
+			var date=time.getDate(); 
+			var day=time.getDay();
+			var hour=time.getHours();
+			var minutes=time.getMinutes();
+			var seconds=time.getSeconds();
+		    if(hour>12){
+		    	hour=hour-12;
+		    }
+			//画圆
+			context.beginPath();
+			context.strokeStyle="hotpink";
+			context.lineWidth=10;
+			context.arc(300,300,180,0,2*Math.PI,false);
+			context.stroke();
+			context.closePath();
+			//小时刻度
+			for(var i=1;i<=12;i++){
+				context.save();
+				context.strokeStyle="#000000";
+				context.lineWidth=7;
+				context.translate(300,300);
+				context.rotate((i*30)*Math.PI/180);
+				context.beginPath();
+				context.moveTo(0,-150);
+				context.lineTo(0,-170);
+				context.closePath();
+				context.stroke();
+				context.restore();
+			}
+			//分刻度
+			for(var i=1;i<=60;i++){
+				context.save();
+				context.strokeStyle="#000000";
+				context.lineWidth=4;
+				context.translate(300,300);
+				context.rotate((i*6)*Math.PI/180);
+				context.beginPath();
+				context.moveTo(0,-160);
+				context.lineTo(0,-170);
+				context.closePath();
+				context.stroke();
+				context.restore();
+			}
+			//时针
+			context.save();
+	        context.lineWidth=7;
+	        context.strokeStyle="#000";
+	        context.translate(300, 300);
+	        context.rotate((hour*30*Math.PI/180)+(30/60*minutes*Math.PI/180));
+	        context.beginPath();
+	        context.moveTo(0, 10);
+	        context.lineTo(0, -120);
+	        context.closePath();
+	        context.stroke();
+	        context.restore();
+	        //分针
+	        context.save();
+	        context.lineWidth=5;
+	        context.strokeStyle="#0000FF";
+	        context.translate(300,300);
+	        context.rotate(minutes*6*Math.PI/180);
+	        context.beginPath();
+	        context.moveTo(0,12);
+	        context.lineTo(0, -135);
+	        context.closePath();
+	        context.stroke();
+	        context.restore();
+	        //秒针
+	        context.save();
+	        context.lineWidth=3;
+	        context.strokeStyle="red";
+	        context.translate(300,300);
+	        context.rotate(seconds*6*Math.PI/180);
+	        context.beginPath();
+	        context.moveTo(0,15);
+	        context.lineTo(0, -145);
+	        context.closePath();
+	        context.stroke();
+	        //修饰秒针
+	        context.beginPath();
+	        context.fillStyle="ghostwhite"
+			context.strokeStyle="red";
+			context.lineWidth=3;
+			context.arc(0,0,5,0,2*Math.PI,false);
+			context.fill();
+			context.stroke();
+			context.closePath();
+			
+			context.beginPath();
+	        context.fillStyle="ghostwhite"
+			context.strokeStyle="red";
+			context.lineWidth=3;
+			context.arc(0,-130,5,0,2*Math.PI,false);
+			context.fill();
+			context.stroke();
+			context.closePath();
+			
+	        context.restore();
+	        switch(day){
+	        case 1:
+	        day="一";break;
+	        case 2:
+	        day="二";break;
+	        case 3:
+	        day="三";break;
+	        case 4:
+	        day="四";break;
+	        case 5:
+	        day="五";break;
+	        case 6:
+	        day="六";break;
+	        case 0:
+	        day="日";
+	        }
+	        var span=document.getElementsByTagName("span")[0];
+	        span.innerHTML=year+"年"+month+"月"+ date+"日"+"&nbsp;"+"星期"+day;
+			}
+		clock();
+		setInterval(clock,1000);
+	</script>
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html ng-app="md" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>循环输出</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<style>
+		img{width: 80px;height: 80px;}
+	</style>
+</head>
+<body>
+<div class="container" ng-controller="M1">
+	<table class="table table-bordered">
+	    <tr align="center" valign="middle" ng-style="addstyle">
+	        <td>序号</td>
+	    	<td>商品名称</td>
+	    	<td>商品价格</td>
+	    	<td>商品图片</td>
+	    	<td>商品日期</td>
+	    	<td>操作</td>
+	    </tr>
+		<tr ng-repeat="(j,i) in data" align="center" valign="middle">
+			<td>{{$index+1}}</td>
+			<td>{{i.name}}</td>
+			<td>{{i.price}}</td>
+			<td><img ng-src="img/{{i.picture}}"/></td>
+			<td>{{i.date}}</td>
+			<td><button class="btn btn-success" ng-click="del(j)">删除</button></td>
+		</tr>
+	</table>
+    <button type="button" class="btn btn-danger btn-block" ng-click="add()">加载更多</button>
+</div>
+
+	
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4/angular.js"></script>
+<script>
+	angular.module("md",[]).controller("M1",function($scope){
+        $scope.data=[
+            {
+        	name:"可乐",
+        	price:"3",
+        	picture:"goods_1.jpg",
+        	date:"2017-07-03T07:36:31535Z"
+            },
+            {
+        	name:"雪碧",
+        	price:"4",
+        	picture:"goods_2.jpg",
+        	date:new Date()
+            },
+            {
+        	name:"橙汁",
+        	price:"5",
+        	picture:"goods_3.jpg",
+        	date:new Date()
+            },
+            {
+        	name:"芬达",
+        	price:"6",
+        	picture:"goods_4.jpg",
+        	date:new Date()
+            },
+        ];
+        $scope.del=function(index){
+        	$scope.data.splice(index,1);
+        };
+        $scope.addstyle={
+        	"background":"red",
+        	"color":"blue",
+        };
+        $scope.add=function(){
+            for(var i=0;i<5;i++){
+                var obj=new Object();
+                obj.name="cola";
+                obj.price="5";
+                obj.picture="goods_2.jpg";
+                obj.date=new Date();
+                $scope.data.push(obj);
+            }
+        };
+	})
+</script>
+</html>

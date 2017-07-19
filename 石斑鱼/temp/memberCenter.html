@@ -1,0 +1,60 @@
+<style>
+	header{width: 100%;height: 9.8rem;background: url(img/vipbg.png) repeat;padding-top: 0.8rem;}
+	header .left{float: left;width: 9rem;height: 9rem;border: 0.1rem solid #E5DFDD;margin-left: 1rem;}
+	header .left img{width: 100%;height: 100%;}
+	header .right{float: left;margin-left: 1rem;margin-top: 0.5rem;}
+	header .right p:nth-child(1){font-weight: bold;}
+	header .right .color{color: #FE6D3F;}
+	ul li{border-bottom: 0.1rem solid #A2A2A2;height: 3rem;line-height: 3rem;padding: 0 0.5rem;background: #F9F9F9;}
+	ul .title{background: #FFFFFF;}
+	ul li p:nth-child(1){float: left;}
+	ul li p:nth-child(2){float: right;}
+</style>
+<div class="container">
+	<header>
+		<div class="left"><img src="img/touxiang.png"/></div>
+		<div class="right">
+			<p ng-style="name">hatakei</p>
+			<p>账户余额：<span ng-bind="left">0</span></p>
+			<p><span class="color">我的VIP会员卡:&nbsp;</span><span ng-bind="cards">我还不是VIP,</span></p>
+			<p class="color" ui-sref="vip" ng-bind="vip">申请成为VIP</p>
+		</div>
+	</header>
+	<ul>
+		<li class="title">订单</li>
+		<li>
+			<p><img src="img/yuding.png"/><span>预定中</span></p>
+			<p><span>0</span><img src="img/jiantou.png" /></p>
+		</li>
+		<li>
+			<p><img src="img/chengjiao.png"/><span>已成交</span></p>
+			<p><span>0</span><img src="img/jiantou.png"/></p>
+		</li>
+		<li>
+			<p><img src="img/weichengjiao.png"/><span>未成交</span></p>
+			<p><span>0</span><img src="img/jiantou.png" /></p>
+		</li>
+		<li class="title">会员积分</li>
+		<li ui-sref="record">
+			<p><img src="img/jifen.png"/>现有积分：<span style="color: #FE6D3F;font-weight: 800;">912</span></p>
+			<p><span>积分记录</span><img src="img/jiantou.png" /></p>
+		</li>
+		<li>
+			<p><img src="img/gift.png"/><span>积分活动</span></p>
+			<p><span>0</span><img src="img/jiantou.png" /></p>
+		</li>
+		<li>
+			<p><img src="img/guize.png"/><span>积分规则</span></p>
+			<p><span>0</span><img src="img/jiantou.png" /></p>
+		</li>
+		<li class="title">账户设置</li>
+		<li>
+			<p><img src="img/user.png"/><span>hatakei</span></p>
+			<p><span>修改</span><img src="img/jiantou.png"/></p>
+		</li>
+		<li ui-sref="password">
+			<p><img src="img/pass.png"/><span>修改密码</span></p>
+			<p><span>0</span><img src="img/jiantou.png" /></p>
+		</li>
+	</ul>
+</div>

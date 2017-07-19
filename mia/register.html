@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="icon" href="img/tubiao.icon" type="image/x-icon" />
+		<style>
+		*{margin:0;padding: 0;}
+		body{height: 700px;width: 1420px;}
+		.poster{width: 622px;position: relative;margin: 125px 0px 0px 150px;float: left;}
+		.poster a{display: block;position: absolute;top: 15px;left: 9px;z-index: 2;}
+		fieldset{float: right;margin-top: 150px;margin-right: 250px;border: none;}
+		fieldset div{width: 350px;height: 30px;line-height: 30px;margin-bottom: 20px;}
+		fieldset .text span{font-size: 14px;}
+		fieldset .text #sp1{font-size: 22px;color: hotpink;margin-right: 75px;}
+		fieldset .text #sp2{color: hotpink;}
+		fieldset .text a{font-size: 14px;text-decoration: none;color: #000000;}
+		fieldset .text a:hover{color: hotpink;}
+		.phone input{width: 285px;height: 30px;border: 1px solid lightgray;float: left;padding-left: 5px;}
+		.phone img{width:50px;height: 32px;border: 1px solid lightgray;display: block;float: left;}
+		#name{width: 290px;height: 30px;border: 1px solid lightgray;}
+		.phonecode input{width: 170px;height: 30px;margin-right: 10px;}
+		.phonecode #btn{width: 150px;height: 38px;}
+		.password{margin-top: 15px;}
+		.password input{width: 285px;height: 30px;border: 1px solid lightgray;float: left;padding-left: 5px;}
+		.password img{width:50px;height: 30px;border: 1px solid lightgray;display: block;float: left;}
+		 #confirm{margin-top: 15px;}
+		.treaty span{font-size: 14px;color:gray;}
+		.treaty a{text-decoration: none;font-size: 14px;color: hotpink;}
+		.treaty a:hover{text-decoration: underline;}
+		#reading{display: block;font-size: 14px;color: red;display: none;}
+		#regist{width: 300px;height:40px;background: deeppink;border: none;color:white;font-size: 20px;
+		    font-weight: bolder;font-weight: bold;margin-top: 15px;}
+		#mail{width: 290px;height: 30px;border: 1px solid lightgray;}
+		label{width: 50px;border: 1px solid lightgray;height: 30px;display:block;float: left;line-height: 30px;}
+		.copyright{font-size: 12px;color: darkgray;position: fixed;bottom: 30px;margin-left: 300px;}
+		.box{width: 1420px;position: relative;}
+		.none{width: 220px;position: absolute;font-size: 12px;color: red;right: 20px;top: 150px;}
+		.none div{margin-top: 10px;}
+		.none div img{display: block;float: left;}
+		.none div span{display: block;float: left;display: none;}
+		#div1{position:absolute;top: 40px;}
+		#div2{position:absolute;top: 90px;}
+		#div3{position:absolute;top: 140px;}
+		#div4{position:absolute;top: 190px;}
+		#div5{position:absolute;top: 240px;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="poster">
+				<img src="img1/poster.png"/>
+				<a href="index.html"><img src="img1/logo.png"/></a>
+			</div>
+			<form type="post">
+				<fieldset>
+					<!--输入框-->
+					<div class="text">
+						<span id="sp1">注册蜜芽</span>
+					    <span id="sp2">还没有蜜芽账号？</span>
+					    <a href="login.html">登录</a>
+					</div>
+					<div class="phone">
+						<img src="img1/person.png" />
+						<input type="tel" placeholder="手机号码" id="cell"/>
+					</div>
+					<label>昵称：</label><input type="text" placeholder="请输入昵称" id="name"/>
+					<div class="password">
+						<img src="img1/lock.png" />
+						<input type="password" placeholder="请输入密码" id="pass"/>
+					</div>
+					<div class="password" id="confirm">
+						<img src="img1/lock.png" />
+						<input type="password" placeholder="确认密码" id="check"/>
+					</div>
+					<label>邮箱：</label><input type="email" placeholder="请输入邮箱" id="mail"/>
+					<div class="treaty">
+						<input type="checkbox" checked="checked" id="cancel"/>
+						<span>我已阅读并接受</span>
+						<a href="#">《蜜芽服务条款》</a>
+						<span id="reading">您未阅读并接受蜜芽服务条款</span>
+					</div>
+					<input type="button" value="注册" id="regist"/>
+				</fieldset>
+				<!--提示信息-->
+				<div class="none">
+					<div id="div1">
+						<span id="cell1"><img src="img1/right.png"/></span>
+						<span id="cell2" style="display:none">请输入正确的手机号码，且为11位纯数字格式</span>
+						<span id="cell3">手机号不能为空</span>
+					</div>
+					<div id="div2">
+						<span id="name1"><img src="img1/right.png"/></span>
+					    <span id="name2">请输入昵称，长度为4-12个字,可使用中文，字母加数字组合</span>
+					    <span id="name3">昵称不能为空</span>
+					</div>
+					<div id="div3">
+						<span id="pass1"><img src="img1/right.png"/></span>
+					    <span id="pass2">请输入密码，长度为6-16个字符，建议使用字母加数字或符号组合</span>
+					    <span id="pass3">密码不能为空</span>
+					</div>
+					<div id="div4">
+						<span id="check1"><img src="img1/right.png"/></span>
+					    <span id="check2">两次输入的密码不一致</span>
+					</div>
+					<div id="div5">
+						<span id="mail1"><img src="img1/right.png"/></span>
+					    <span id="mail2">请输入正确的邮箱格式</span>
+					    <span id="mail3">邮箱不能为空</span>
+					</div>
+				</div>
+			</form>
+		</div>
+		<p class="copyright">Copyright ©2017 北京花旺在线商贸有限公司 Miyabaobei.com 保留一切权利。客服热线： 400-789-2000。京ICP证140430号 京ICP备14006215号</p>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script src="js/part-of-register.js"></script>
+</html>

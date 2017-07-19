@@ -1,0 +1,34 @@
+<style>
+	body{background: url(img/bg.jpg) repeat;background-size: 100% 100%;}
+	div:ntn-child(1){width: 100%;height: 18rem;}
+	img{width: 100%;height: 7rem;}
+	.content{width: 90%;height: 20rem;margin: 5.5rem auto 0;}
+	.content h1{color: #fff;width: 8rem;margin:0 auto;margin-bottom: 1rem;}
+	.content div{background: #C7C7C7;width: 100%;height:13rem;padding-top: 2rem;border-radius: 1rem;}
+	.content div p{width: 26rem;text-align: center;}
+	.content div p:nth-child(2){margin:1.2rem 0rem;}
+	.content div p input{border: none;width: 20rem;height: 1.8rem;outline: none;}
+	.content div button{width: 10rem;height: 2rem;border-radius: 0.5rem;color: #fff;border: none;outline: none;}
+	.content div button:nth-child(1){background: #FCA73A;}
+	.content div button:nth-child(2){background:red;margin-left: 2rem;}
+</style>
+<div class="container"><img src="img/logo_s.jpg" /></div>
+<div class="content">
+	<h1>会员登录</h1>
+	<div>
+		<p>账号：<input type="text" id="name"/></p>
+		<p>密码：<input type="password" id="pass"/></p>
+		<p>
+		   <button style="background: #FCA73A" ng-click="login()">登录</button>
+		   <button style="background:red" ng-click="apply()">申请VIP</button>
+		</p>
+	</div>
+</div>
+<script>
+window.onload=function(){
+       document.documentElement.style.fontSize=document.documentElement.clientWidth/37.5+"px";
+       window.addEventListener("resize",function(){
+          document.documentElement.style.fontSize=document.documentElement.clientWidth/37.5+"px";
+       })
+   } 
+</script>

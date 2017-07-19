@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户注册表单页</title>
+    <style>
+       #form_content{
+           width:600px;
+           margin:0 auto;
+           position:absolute;
+           left:400px;
+       }
+       #form_content .dc{
+           width:600px;
+           margin-top:10px;
+           overflow:hidden;
+       }
+       #form_content .dc h3{
+           text-align:center;
+       }
+       #form_content b{
+           display:inline-block;
+           height:40px;
+           line-height: 40px;
+           margin-left:20px;
+       }
+        #form_content input{
+            display:inline-block;
+            height:34px;
+            width:200px;
+            border-radius:2px;
+            margin-left:60px;
+            padding-left:10px;
+        }
+        .pc{
+            width:200px;
+            height:40px;
+            float:right;
+            line-height:40px;
+            text-align:center;
+            margin:0 20px 0;
+            background:#333;
+            color:#fff;
+            font-weight:bold;
+            border-radius:8px;
+            display:none;
+        }
+        input#sub{
+            display:inline-block;
+            width:215px;
+            background:#f0f;
+            margin-left:144px;
+        }
+        .show_pass{
+            background:limegreen;
+            display:block;
+        }
+        .show_warn{
+            background:#e4393c;
+            display:block;
+        }
+        #audio_bground{
+            width:100%;
+            height:100%;
+            background:#afa;
+            position:absolute;
+            z-index:-10;
+        }
+    </style>
+</head>
+<body>
+    <!--input 标签新特性-->
+    <form>
+        <!--email属性-->
+        邮箱类型<input type="email"/><br/>
+        <!--tel属性-->
+        电话类型<input type="tel"/><br/>
+        <!--number属性-->
+        数字类型<input type="number"/><br/>
+        <!--date属性-->
+        日期类型<input type="date"/><br/>
+        <!--month属性-->
+        月份类型<input type="month"/><br/>
+        <!--week属性-->
+        周期类型<input type="week"/><br/>
+        <!--range属性-->
+        数字范围<input type="range" min="18" max="60"/><br/>
+        <!--search属性-->
+        搜素类型<input type="search"/><br/>
+        <!--color属性-->
+        颜色选择器<input type="color"/><br/>
+        <!--url属性-->
+        网址类型<input type="url"/><br/>
+        <input type='submit'/>
+    </form>
+        <hr/>
+    <div id="form_content">
+        <form action="">
+            <div class="dc"><h3>用户注册页面</h3></div>
+            <div class="dc"><b>用户昵称</b><input id="user" type="text" autofocus required pattern="^[0-9a-zA-Z]{6,10}$"/><p class="pc">请输入用户名</p></div>
+            <div class="dc"><b>用户密码</b><input id="pwd" type="password" required pattern="^\w{8,12}$"/><p class="pc">请输入密码</p></div>
+            <div class="dc"><b>个人邮箱</b><input id="email" type="email" required/><p class="pc">清输入邮箱</p></div>
+            <div class="dc"><b>个人主页</b><input id="url" type="url" required/><p class="pc">请输入个人主页(可不填)</p></div>
+            <div class="dc"><b>联系电话</b><input id="tel" type="tel" required/><p class="pc">请输入联系电话</p></div>
+            <div class="dc"><b>你的年龄</b><input id="age" type="number" min="18" max="60" required/><p class="pc">请输入你的年龄</p></div>
+            <div class="dc"><b>出生日期</b><input id="date" type="date" required/><p class="pc">请选择出生日期</p></div>
+            <div class="dc"><input id="sub" type="submit" value="提交注册"/></div>
+        </form>
+    </div>
+    <script>
+        var uname=document.getElementById('user');
+        uname.onfocus=function(){
+            this.nextElementSibling.style.display='block';
+            this.nextElementSibling.innerHTML='8-12数字或字母组成';
+        }
+        uname.onblur=function(){
+            if(this.validity.valid){
+                this.nextElementSibling.className='pc show_pass';
+                this.nextElementSibling.innerHTML='用户名格式正确';
+            }
+            else if(this.validity.valueMissing) {
+                this.nextElementSibling.className = 'pc show_warn';
+                this.nextElementSibling.innerHTML = '用户名不能为空';
+            }else if(this.validity.patternMismatch){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='用户名格式非法';
+            }
+        }
+        var upwd=document.getElementById('pwd');
+        upwd.onfocus=function(){
+            this.nextElementSibling.style.display='block';
+            this.nextElementSibling.innerHTML='6-12位数字/字母/英文符号组成';
+        }
+        upwd.onblur=function(){
+            if(this.validity.valid){
+                this.nextElementSibling.className='pc show_pass';
+                this.nextElementSibling.innerHTML='密码格式正确';
+            }else if(this.validity.valueMissing){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='用户密码不能为空';
+            }else if(this.validity.patternMismatch){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='密码格式非法';
+            }
+        }
+        var e_mail=document.getElementById('email');
+        e_mail.onfocus=function(){
+            this.nextElementSibling.style.display='block';
+            this.nextElementSibling.innerHTML='请输入你的常用邮箱';
+        }
+        e_mail.onblur=function(){
+            if(this.validity.valid) {
+                this.nextElementSibling.className = 'pc show_pass';
+                this.nextElementSibling.innerHTML = '邮箱格式正确';
+            }else if(this.validity.valueMissing){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='邮箱不能为空';
+            }else if(this.validity.typeMismatch){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='邮箱格式有误';
+            }
+        }
+        var url=document.getElementById('url');
+        url.onfocus=function(){
+            this.nextElementSibling.style.display='block';
+            this.nextElementSibling.innerHTML='请输入你的个人主页(选填)';
+        }
+        url.onblur=function(){
+            if(this.validity.valid) {
+                this.nextElementSibling.className = 'pc show_pass';
+                this.nextElementSibling.innerHTML = '网址格式正确';
+            }else if(this.validity.typeMismatch){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='网址格式非法';
+            }
+        }
+        var uphone=document.getElementById('tel');
+        uphone.onfocus=function(){
+            this.nextElementSibling.style.display='block';
+            this.nextElementSibling.innerHTML='请输入你的联系电话';
+        }
+        uphone.onblur=function(){
+            if(this.validity.valid){
+                this.nextElementSibling.className='pc show_pass';
+                this.nextElementSibling.innerHTML='电话号码格式正确';
+           }else if(this.validity.valueMissing){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='电话号码不能外空';
+            }else if(this.validity.typeMismatch){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='电话号码格式非法';
+            }
+        }
+        var uage=document.getElementById('age');
+        uage.onfocus=function(){
+            this.nextElementSibling.style.diplay='block';
+            this.nextElementSibling.innerHTML='请输入你的年龄';
+        }
+        uage.onblur=function(){
+            if(this.validity.valid){
+                this.nextElementSibling.className='pc show_pass';
+                this.nextElementSibling.innerHTML='你的年龄符合注册要求';
+            }else if(this.validity.rangeOverflow){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='你的年龄大于注册范围';
+            }else if(this.validity.rangeUnderflow){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='你的年龄小于注册范围'
+            }else if(this.validity.valueMissing){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='年龄不能为空';
+            }
+        }
+        var udate=document.getElementById('date');
+        udate.onfocus=function(){
+           this.nextElementSibling.style.display='block';
+            this.nextElementSibling.innerHTML='请输入你的出生日期';
+        }
+        udate.onblur=function(){
+            if(this.validity.valueMissing){
+                this.nextElementSibling.className='pc show_warn';
+                this.nextElementSibling.innerHTML='出生日期不能为空';
+            }else if(this.validity.valid){
+                this.nextElementSibling.className='pc show_pass';
+                this.nextElementSibling.innerHTML='已选择出生日期';
+            }
+        }
+    </script>
+</body>
+</html>

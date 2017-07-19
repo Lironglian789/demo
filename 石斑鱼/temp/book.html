@@ -1,0 +1,23 @@
+<style>
+	.box{background: url(img/dingwei.png) repeat;padding-top: 1rem;}
+	.box button{width: 4rem;height: 2rem;background: #F7F8F7;position: absolute;left: 2rem;top: 1.8rem;border: 0.1rem solid #Fcdcdcd;
+	    color: #A2A2A2;}
+	.box div{margin: 0rem auto;width: 20rem;}
+	.box form{height: 28rem;}
+	.box form p{width: 21rem;height: 4rem;border: 0.1rem solid #CDCDCD;background: #EDEDED;line-height: 3rem;margin: 0 auto 1rem;}
+	.box form p label{width: 6rem;text-align: center;display: inline-block;}
+	.box form p input{display: inline-block;width: 13.5rem;height: 2rem;}
+	.box form input[type=submit]{display: block;width: 21rem;height: 3rem;border: 0.1rem solid #CDCDCD;background: #EDEDED;margin: 0rem auto;}
+</style>
+<div class="box">
+	<!--<div id="sanjiao"></div>-->
+	<button ui-sref="dishes">返回</button>
+	<div><img src="img/clock.png"/></div>
+	<form>
+		<p><label>预定时间：</label><input type="datetime-local"/></p>
+		<p><label>预定座位：</label><input type="text" /></p>
+		<p><label>手机号：</label><input type="tel" /></p>
+		<p><label>姓名：</label><input type="text" /></p>
+		<input type="submit">
+	</form>
+</div>

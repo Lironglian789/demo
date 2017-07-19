@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<link rel="icon" href="img/tubiao.icon" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/part-of-shoppingCart.css"/>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="head1">
+			<div id="left1"><img src="img/cell.png"/><a href="#">手机蜜芽</a></div>
+			<div id="right1">
+				<span>你好，欢迎来到蜜芽！</span>
+				<a href="login.html">登录</a>
+				<a href="register.html">免费注册</a>
+				<a href="HelpCenter.html" target="_blank">帮助中心</a>
+			</div>
+		</div>
+		<div class="head2">
+			<div id="logo"><a href="index.html"><img src="img/miya.png"/></a></div>
+			<div id="bread"><img src="img1/breadcrumbs.png"/></div>
+		</div>
+		<!--购物车商品-->
+		<div class="container">
+			<p>我的购物车</p>
+			<ul class="title">
+				<li id="l1"><input type="checkbox" class="checkAll"/>全选</li>
+				<li id="l2">商品</li>
+				<li>规格</li>
+				<li>单价</li>
+				<li>数量</li>
+				<li>小计</li>
+				<li>操作</li>
+			</ul>
+			<div class="cart-content">
+					<div>
+						<span>199减50/399减100</span>
+					</div>
+					<p>
+						<span id="s1">阶梯满减</span>
+						<span>523好货返场    199减50/399减100</span>
+						<a href="pigeon.html">去凑单></a>
+					</p>
+					<!--一件商品开始-->
+					<ol class="add-goods">
+						<li class="li1">
+							<input type="checkbox"  class="checkEach"/>
+							<a href="pro-center.html" title="贝亲 Pigeon 奶瓶清洁剂 700ml" target="_blank" class="img">
+								<img src="img1/pigeon.jpg" />
+							</a>
+							<a href="pro-center.html" title="贝亲 Pigeon 奶瓶清洁剂 700ml" target="_blank">
+								<span>贝亲 Pigeon 奶瓶清洁剂 700ml</span>
+							</a>
+							<span>商品编号：1000830</span>
+							<div>
+								<img src="img1/pegion1.png"  class="enlarge" />
+							</div>
+						</li>
+						<li class="li2">
+							<p >¥ <span class="unitPrice">28.00</span></p>
+							<del>¥ 45.00</del>
+						</li>
+						<li class="li3">
+							<input type="button" value="-" class="reduce" />
+							<input type="text" value="1" class="txt"/>
+							<input type="button" value="+" class="add"/>
+							<p class="change">数量修改成功</p>
+						</li>
+						<li class="li4">￥ <span class="subTotal">28.00</span></li>
+						<li class="li5"><a class="del">删除</a></li>
+					</ol>
+					<!--一件商品结束-->
+					<!--一件商品开始-->
+					<ol class="add-goods">
+						<li class="li1">
+							<input type="checkbox"  class="checkEach"/>
+							<a href="pro-center.html" title="贝亲 Pigeon 宽口径玻璃奶瓶 黄色 160ml" target="_blank"  class="img">
+								<img src="img1/naiping.jpg" />
+							</a>
+							<a href="pro-center.html" title="贝亲 Pigeon 宽口径玻璃奶瓶 黄色 160ml" target="_blank">
+								<span>贝亲 Pigeon 宽口径玻璃奶瓶 黄色 160ml</span>
+							</a>
+							<span>商品编号：1000200</span>
+							<div>
+								<img src="img1/naipingl.png" class="enlarge"/>
+							</div>
+						</li>
+						<li class="li2">
+							<p >¥ <span class="unitPrice">79.00</span></p>
+							<del>¥ 118.00</del>
+						</li>
+						<li class="li3">
+							<input type="button" value="-" class="reduce" />
+							<input type="text" value="1" class="txt"/>
+							<input type="button" value="+" class="add"/>
+							<p class="change">数量修改成功</p>
+						</li>
+						<li class="li4">￥ <span class="subTotal">79.00</span></li>
+						<li class="li5"><a class="del">删除</a></li>
+					</ol>
+					<!--一件商品结束-->
+					<!--删除商品提示内容-->
+					<div class="alert" style="background: #4F4F4F;height: 900px;width: 1420px;">
+					</div>
+					<div id="div">
+						<span id="dtitle">删除宝贝</span>
+						<p>确定要删除该商品么？</p>
+						<span id="confirm">确定</span>
+						<span id="cancel">取消</span>
+					</div>
+			</div>
+			<!--购物车商品结束-->
+			<!--购物车结算点击去结算栏-->
+			<div class="go">
+				<span><input type="checkbox" class="checkAll"/>全选</span>
+				<a>删除选择商品</a>
+				<p id="remind1">请选择要删除的商品</p>
+				<a>清除无效商品</a>
+				<p id="remind2">没有已失效的商品</p>
+				<a>移入收藏夹</a>
+				<p id="remind3">请选择要移入收藏夹的商品</p>
+				<span style="padding-left:60px;">已选择商品<span id="quantity">0</span>件 合计（不含运费和进口税）：<span>¥</span><span id="total">0</span></span>
+				<button id="pay">去结算</button>
+			</div>
+		</div>
+		<!--购物车为空时-->
+		<div class="empty">
+			<img src="img1/empty.jpg" />
+			<p class="p1">您还没有为您可爱的宝宝挑选任何商品哦~</p>
+			<p class="p2">您可以去 <a href="index.html">首页</a> 挑选宝宝喜欢的商品</p>
+		</div>
+		<!--左右固定-->
+		<div class="fixed-left"><img src="img/lfixed.png"/></div>
+		<div class="fixed-right">
+			<a href="ShoppingCart.html"><img src="img/cart.png"/><p id="cart">购物车</p></a>
+			<a href="login.html" id="zixun"><img src="img/zixun.png"/><p>咨询</p></a>
+			<a href="#" id="wechat"><img src="img/wechat.png"/><p>微信</p><img src="img/erweima.png" id="sys"/></a>
+			<button id="btn"><img src="img/back.png"/></button>
+		</div>
+		<!--底部开始-->
+		<div class="bottom" style="border-top: 1px solid lightgray;margin-top: 0px;">
+			<div class="B1">
+				<a href="#" id="only"><img src="img/b1.png"/></a>
+				<a href="#"><img src="img/b2.png"/></a>
+				<a href="#"><img src="img/b3.png"/></a>
+				<a href="#"><img src="img/b4.png"/></a>
+				<a href="#"><img src="img/b5.png"/></a>
+				<a href="#"><img src="img/b6.png"/></a>
+			</div>
+			<div id="horizontal">
+				<ul class="B2">
+					<li>
+						<p>使用帮助</p>
+						<a href="#">新手指南</a>
+						<a href="#">蜜粉值体系</a>
+						<a href="#">蜜豆体系</a>
+						<a href="#">正品承诺</a>
+					</li>
+					<li>
+						<p>支付方式</p>
+						<a href="#">支付方式</a>
+						<a href="#">支付流程</a>
+						<a href="#">跨境进口税</a>
+					</li>
+					<li>
+						<p>配送方式</p>
+						<a href="#">包邮政策</a>
+						<a href="#">发货时间</a>
+						<a href="#">配送区域</a>
+						<a href="#">验货签收</a>
+					</li>
+					<li>
+						<p>售后服务</p>
+						<a href="#">退货政策</a>
+						<a href="#">退货流程</a>
+						<a href="#">退款方式</a>
+					</li>
+					<li id="contact">
+						<p>联系方式</p>
+						<span>总裁邮箱 ceo@mia.com</span>
+						<span>商务合作 bd@mia.com</span>
+						<span>媒体合作 pr@mia.com</span>
+						<span>招商中心 zhaoshang@mia.com</span>
+						<span>企业采购 qiye@mia.com</span>
+					</li>
+					<li id="follow">
+						<p>关注蜜芽</p>
+						<div class="app"><img src="img/app.jpg"/></div>
+						<div class="ww">
+							<a href="#"><img src="img/wb.gif" id="wb"/></a>
+							<span><img src="img/wx.gif" id="wx"/><img src="img/ww.png"/ id="weixin"></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="more">
+					<a href="#">关于蜜芽</a>
+					<a href="#">加入蜜芽</a>
+					<a href="#">商务合作</a>
+					<a href="#">帮助中心</a>
+					<a href="#">帮助中心</a>
+					<a href="#">友情链接</a>
+					<a href="#">友情链接</a>
+					<a href="#">媒体报道</a>
+					<a href="#" style="border-right: none;">妈米计划</a>
+				</div>
+			<div class="licence">
+				<p>京公网安备：11010502027270 | 营业执照：91110105582599307U | 食品经营许可证：SP1101051410296669 | 
+					出版物经营许可证：新出发京零字第朝160088号 | 京ICP证140430号 </p>
+				<p>京ICP备14006215号 | 员工舞弊举报：jiancha@mia.com 电话：010-56733467</p>
+				<p>通过本网站直接或者间接地推销商品或者服务的商业宣传活动均属“广告”</p>
+				<p>Copyright © 2017 北京花旺在线商贸有限公司 Mia.com 保留一切权利。</p>
+			</div>
+			<div class="last">
+				<a href="#"><img src="img/dianxin.png"/></a>
+				<a href="#"><img src="img/kexin.png"/></a>
+				<p><img src="img/alipay.jpg"/></p>
+			</div>
+		</div>
+		<!-- 底部结束-->
+	</body>
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script src="js/part-of-shoppingCart.js"></script>
+</html>

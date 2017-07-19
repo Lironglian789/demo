@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> new document </title>
+    <meta charset="utf-8" />
+    <script>
+        var n1=2,n2=3,
+                s1="2",s2="3",
+                b1=true,b2=false;
+
+        console.log(n1+n2);   
+        console.log(n1+s2);   
+        //如果  +    有一边为字符串   +就是一个连接符
+        console.log(s2-s1);
+    //    如果   -       所有数字类型的字符串   都会转为数字进行运算
+        console.log(s1-n2);
+        //    如果   -       只要有一边为数字  其他都会转为数字运算
+        console.log(n1+n2+s2);
+
+        console.log(n1+s2+n2);
+
+        console.log(s2-b1);
+        //   如果   -   true 和false  都会转化为  1  0(number) 执行运算
+        console.log(s2+b1);
+        //如果+     会随着符号另一边的数据类型变化
+
+        console.log(Number(s1)*Number(b2));
+
+
+        var str;
+        console.log(s1+str);
+        console.log(s2-str);
+        //   任何数字 减去undefined  都是  NAN
+        console.log(n1*str);
+
+        var n=3;
+        console.log(n++ + ++n + n++);
+        //                   3          5          5
+        //                   4          5          6
+
+
+
+
+        var n=3;
+        console.log(++n + n++ + ++n);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

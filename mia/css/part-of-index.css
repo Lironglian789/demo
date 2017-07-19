@@ -1,0 +1,69 @@
+ol,ul{list-style: none;}
+*{margin:0 auto;padding:0;}
+body{background: #F5F5F5;}
+
+/*轮播图*/
+.swiper-container ul li img{width: 1420px;height: 480px;display: block;}
+.swiper-container{width: 1420px;margin: auto;position: relative;}
+.swiper-container ul{margin: 0;padding: 0;position: relative;width: 1420px;height: 480px;}
+.swiper-container ul li{float: left;position: absolute;top: 0;left: 0;display: none;}
+#item1{z-index: 3;}
+#item2{z-index: 2;}
+#item3{z-index: 1;}
+#item4{z-index: 0;}
+/*向左向右的按钮*/
+.left,.right{position: absolute;top: 200px;z-index: 10;width: 30px;height: 60px;border: none;background: #FF1493;
+    font-size: 30px;color: #fff;text-align: center;padding: 0;opacity: 0.1;cursor: pointer;outline: none;}
+.left{left: 0;}
+.right{right: 0;}
+.left:hover,.right:hover{opacity:1;}
+/*圆点*/
+.dot{padding-left: 12px; width: 130px; height: 30px;position: absolute;right: 125px; bottom: 5px;
+    text-align: center;z-index: 4; background: #DCDCDC;border-radius: 20px;}
+.dot span{display:block; width: 30px;height: 30px;float: left;line-height: 30px;border-radius: 50%;
+    cursor: pointer;background: #F5F5F5;}
+.dot .active{background: deeppink;}
+
+/*热卖品牌*/
+.trademark{width: 870px;height: 157px;margin-left: 420px;background: white;margin-top: 10px;}
+.trademark a{display: block;float: left;width:115px;height: 100px;font-weight: bold;text-align: center;
+	line-height: 120px;}
+.trademark a>img{width: 90px;height: 90px;margin-top: 25px;}
+.newer{width: 1160px;height: 242px;margin: 10px auto;}
+.newer img{width: 100%;}
+
+/*为你推荐*/
+#tuijian p{font-weight: bold;font-size: 20px;float: left;font-size: 25px;height: 80px;line-height: 80px;
+	margin-right: 20px;margin-left: 130px;}
+#tuijian span{height: 80px;color: darkgray;font-size: 20px;line-height: 80px;}
+.recommand{width: 1160px;height: 643px;border-top: 1px solid lightgray;border-left: 1px solid lightgray;}
+.recommand>a{display: block;width: 226px;height: 320px;text-decoration: none;color: lightslategray;float: left;
+    position: relative;border-bottom: 1px solid lightgray;border-right: 1px solid lightgray;background: white;
+   padding-left: 5px;}
+.recommand>a img{width: 226px;height: 220px;}
+.recommand>a .change{font-weight: bold;color: #000000;}
+.recommand>a .pink{color: hotpink;font-size: 20px;}
+.recommand>a .go{display: block;width: 80px;height: 35px;background: hotpink;border-radius: 70%;text-align: center;
+    line-height: 35px;position: absolute;right: 20px;bottom: 20px;color: white;}
+.recommand>a:hover img{opacity: 0.5;}
+.recommand>a:hover .change{color: hotpink;}
+.recommand>a:hover .go{background: deeppink;}
+.onsales{width: 1160px;height: 350px;border: 1px solid lightgray;background: white;margin-bottom: 15px;}
+.onsales .img{width: 745px;height: 350px;display: block;float: left;}
+.onsales .img img{width: 725px;height: 330px;margin: 10px;}
+.onsales .top {width: 415px;height: 350px;float:left;}
+.onsales .top a{display: block;width: 390px;height: 116px;border-bottom: 1px dashed lightgray;cursor: pointer;}
+.onsales .top a img{display: block;float: left;margin: 8px 20px;}
+.onsales .top a .hover span{display: block;}
+.onsales .top p{margin: 10px 0px;color: darkgray;}
+.onsales .top .pink{color: hotpink;font-size: 20px;}
+.onsales .top a:hover .hover{color: hotpink;} 
+.onsales .top a:hover img{opacity: 0.7;}  
+    
+/*底部广告*/
+.a-box{width: 1420px;position: relative;}
+.fixed-bottom{width: 1420px;height: 120px;background: dimgray;opacity: 0.9;position: fixed;bottom: 0px;z-index: 4;}
+.play{position: fixed;bottom: -3px;z-index: 10;margin-left: 210px;}
+#close{position: fixed;right: 212px;bottom: 70px;z-index:9;width: 50px;height: 50px;}
+#close img{width: 100%;height: 100%;}
+

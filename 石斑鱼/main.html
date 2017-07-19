@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scale=no"/>
+       <title>菜品</title>
+       <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+       <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+       <style type="text/css">
+            /*头部*/
+            body{background: #F4F4F4;}
+            /*底部*/
+            .footer{width:100%;height:3rem;border-top:0.1rem solid gray;border-bottom:0.1rem solid gray;display: flex;background: #F4F4F4;position: fixed;left: 0;bottom: 0;}
+            .footer>div{width:25%;height:100%;border-right:0.1rem solid gray;font-size: 1.4rem;position: relative;text-align: center;line-height: 3rem;}
+            .footer>div ul{position: absolute;border: 0.1rem solid gray;display: none;background: #F4F4F4;}
+            .footer>div .show{display: block;}
+            .footer>div li{width: 4rem;height: 2rem;font-size: 1.2rem;line-height: 2rem;text-align: center;}
+            .footer>div:nth-child(2) ul{left: 15%;top: -8.5rem;}
+            .footer>div:nth-child(3) ul{left: 8%;top: -4.5rem;}
+            .footer>div:nth-child(3) ul li{width: 5rem;}
+            .footer>div:nth-child(4) ul{left: 0;top: -3.8em;}
+            .footer>div:nth-child(4) ul li{width: 7rem;} 
+            .footer>div:nth-child(5) ul{left: 10%;top: -2.5rem;}
+            .footer>div:nth-child(5){border-right:none;}
+            .footer>div:nth-child(5) ul li{width: 5rem;} 
+            .footer .iconfont{font-size: 2rem;color:#535353;}
+       </style>
+</head>
+<body ng-controller="diCtrl">
+	<div ui-view="view-page"></div>
+    <!-- 底部 -->
+    <footer class="footer">
+	    <div>
+	    	<a href="index.html"><i class="iconfont icon-home2-copy"></i></a>
+	    </div>
+	    <div>
+	      	<p ui-sref="dishes">菜品</p>
+	      	<ul>
+	      		<li ng-click="huoguo()">火锅</li>
+	      		<li ng-click="difangcai()">地方菜</li>
+	      		<li ng-click="xican()">西餐</li>
+	      		<li ng-click="kuaican()">快餐</li>
+	      	</ul>
+	    </div>
+	    <div>
+	      	<p>订位</p>
+	      	<ul>
+	      		<li ui-sref="book">我要订位</li>
+	      		<li ui-sref="memberCenter">会员中心</li>
+	      	</ul>
+	    </div>
+	    <div>
+	      	<p>VIP</p>
+	      	<ul> 
+	      		<li ui-sref="vip">我要成为VIP</li>
+	      		<li ui-sref="points">积分兑换</li>
+	      	</ul>
+	    </div>
+	    <div>
+	      	<p>点单</p>
+	      	<ul>
+	      		<li>我的订单</li>
+	      	</ul>
+	    </div>
+    </footer>
+</body>
+<script src="js/jquery-2.1.0.js"></script>
+<script src="js/main.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script type="text/javascript">
+    angular.module("app",["ng","ui.router"]).config(function($stateProvider,$urlRouterProvider){
+    	$stateProvider.state("dishes",{     //配置路由字典
+			url:"/dishes",
+			views:{
+				"view-page":{
+					templateUrl:"temp/dishes.html",
+				}
+			}
+		}).state("detail",{    
+			url:"/detail/{mtitle}&{mimagelg}&{mprice}&{mVIP}&{mtime}&{mpoints}&{mspecialty}",
+			views:{
+				"view-page":{
+					templateUrl:"temp/detail.html",
+					controller:"deCtrl"
+				}
+			}
+		}).state("vip",{    
+			url:"/vip",
+			views:{
+				"view-page":{
+					templateUrl:"temp/vip.html",
+					controller:"vipCtrl"
+				}
+			}
+		}).state("points",{    
+			url:"/points",
+			views:{
+				"view-page":{
+					templateUrl:"temp/pointsMall.html",
+				}
+			}
+		}).state("book",{    
+			url:"/book",
+			views:{
+				"view-page":{
+					templateUrl:"temp/book.html",
+				}
+			}
+		}).state("memberCenter",{    
+			url:"/memberCenter",
+			views:{
+				"view-page":{
+					templateUrl:"temp/memberCenter.html",
+					controller:"meCtrl"
+				}
+			}
+		}).state("record",{    
+			url:"/record",
+			views:{
+				"view-page":{
+					templateUrl:"temp/pointsRecord.html",
+				}
+			}
+		}).state("password",{
+			url:"/password",
+			views:{
+				"view-page":{
+					templateUrl:"temp/modifyPassword.html",
+				}
+			}
+		})
+    	$urlRouterProvider.otherwise("dishes");
+    }).controller("diCtrl",function($scope,$http){
+    	//获取菜品数据
+        $http({
+            method:"GET",
+            url:"js/data.json",
+        }).then(function success(response){
+            var list=response.data;
+            $scope.arr=[];
+            //封装一个数据更换的函数方法
+            Lists=function(){
+            	$scope.hide1=true;
+            	$scope.hide2=false;
+            	i=2;
+            	$scope.arr=goodsArr.slice(0,2);
+            	$scope.next=function(){
+            		$scope.hide1=false;
+            		$scope.arr=goodsArr.slice(i,i+2);
+            		i+=2;
+            		if(i>=goodsArr.length){
+            			$scope.hide2=true;
+            		}
+            	}
+            	$scope.prev=function(){
+            		$scope.hide2=false;
+            		i-=2;
+            		$scope.arr=list.slice(i-2,i);
+            		if(i==2){
+            			$scope.hide1=true;
+            		}
+            	}
+            }
+            //点击调用方法切换菜品页面数据
+            var goodsArr=list.slice(0);
+            Lists();
+            $scope.all=function(){
+                goodsArr=list.slice(0);
+            	Lists();
+            }
+            $scope.special=function(){
+            	goodsArr=list.slice(10,20);
+            	Lists();
+            }
+            $scope.recommend=function(){
+            	goodsArr=list.slice(20,30);
+            	Lists();
+            }
+            $scope.best=function(){
+            	goodsArr=list.slice(30);
+            	Lists();
+            }
+            $scope.huoguo=function(){
+            	goodsArr=list.slice(0,10);
+            	Lists();
+            }
+            $scope.difangcai=function(){
+            	goodsArr=list.slice(10,20);
+            	Lists();
+            }
+            $scope.xican=function(){
+            	goodsArr=list.slice(20,30);
+            	Lists();
+            }
+            $scope.kuaican=function(){
+            	goodsArr=list.slice(30);
+            	Lists();
+            }
+       })
+    }).controller("deCtrl",function($scope,$stateParams){
+    	$scope.atitle=$stateParams.mtitle;
+    	$scope.aimagelg=$stateParams.mimagelg;
+    	$scope.aprice=$stateParams.mprice;
+    	$scope.aVIP=$stateParams.mVIP;
+    	$scope.atime=$stateParams.mtime;
+    	$scope.apoints=$stateParams.mpoints;
+    	$scope.aspecialty=$stateParams.mspecialty;
+    }).controller("meCtrl",function($scope){
+    	$scope.left="0";
+		$scope.cards="我还不是VIP";
+		$scope.vip="申请成为VIP"
+    }).controller("vipCtrl",function($rootScope,$location){
+	    var Name=document.getElementById("name");
+		var Pass=document.getElementById("pass");
+    	$rootScope.apply=function(){
+    		if(/^\s*$/.test(Name.value) || /^\s*$/.test(Pass.value)){
+				alert("内容不能为空");
+			}else{
+				var name=Name.value;
+				var pass=Pass.value;
+				for(var i=0;i<localStorage;i++){
+					if(name==localStorage.key(i)){
+						alert("账号已存在");
+						pass=localStorage.getItem(localStorage.key(i));
+					}
+				}
+			    localStorage.setItem(name,pass);
+			    alert("申请成功");
+			    Name.value="";
+			    Pass.value="";
+			}
+    	}
+    	$rootScope.login=function(){
+    		if(/^\s*$/.test(Name.value) || /^\s*$/.test(Pass.value)){
+				alert("请输入账号和密码");
+			}else{
+				var name=Name.value;
+			    var pass=Pass.value;
+			    for(var i=0;i<localStorage.length;i++){
+			    	if(name==localStorage.key(i) && pass==localStorage.getItem(localStorage.key(i))){
+			    		alert("登陆成功");
+			    		$location.path("/memberCenter")
+			    		$rootScope.name={"color":"red",};
+			    		$rootScope.left="￥998";
+			    		$rootScope.cards="22张";
+			    		$rootScope.vip="您已经是尊贵的VIP成员！"
+			    	}else{
+			    		alert("输入的账号或密码不正确");
+			    	}
+			    }
+			}
+    		
+    	}
+    })
+</script>
+</html>

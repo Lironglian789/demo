@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录页面</title>
+		<link rel="icon" href="img/tubiao.icon" type="image/x-icon" />
+		<style>
+		body{background: white;height: 630px;width: 1420px;}
+		.logo{display: block;margin-top: 50px;margin-left: 150px;}
+		.cellapp{width: 536px;height: 296px;margin-left: 200px;float: left;position: relative;}
+		.cellapp a{display:block;width: 134px;height: 36px;}
+		.cellapp p{position: absolute;top: 157px;left: 220px;}
+		fieldset{width:350px;border: 1px solid lightgray;float: right;float: left;
+		    margin-right: 200px;position: relative;}
+		fieldset div{width: 350px;height: 30px;line-height: 30px;margin-bottom: 20px;}
+		fieldset .text span{font-size: 14px;}
+		fieldset .text #sp1{font-size: 22px;color: hotpink;margin-right: 55px;}
+		fieldset .text #sp2{color: hotpink;}
+		fieldset .text a{font-size: 14px;text-decoration: none;color: #000000;}
+		fieldset .text a:hover{color: hotpink;}
+		.phone input{width: 300px;height: 30px;border: 1px solid lightgray;float: left;}
+		.phone img{height: 32px;;border: 1px solid lightgray;display: block;float: left;}
+		.verify{width:350px;height: 30px;margin-top: 15px;}
+		.verify #txt{width: 100px;height: 30px;margin-right: 10px;}
+		.verify #code{width: 70px;height: 30px;text-align: center;}
+		.verify #refresh{width: 80px;height: 35px;border: none;float: right;margin-right: 8px;}
+		#pass {width: 287px;height: 30px;margin:15px 10px 10px 0px;}
+		#btn{width: 300px;height:40px;background: deeppink;border: none;color:white;
+		    font-size: 20px;font-weight: bolder;margin-top: 15px;}
+		.choose{height: 50px;line-height: 50px;}
+		.choose a{margin-top: 20px;display: block;float: left;}
+		.choose span{margin-top: 10px;display: block;float: left;}
+		.copyright{font-size: 12px;color: darkgray;position: fixed;bottom: 40px;
+		    margin-left: 300px;}
+		.alert{display:block;color: red;font-size: 14px;position: absolute;margin-left: 50px;display: none;}
+		#jg1{top: 95px;}
+		#jg2{top: 160px;}
+		#jg3{top: 220px;}
+		</style>
+	</head>
+	<body>
+		<a href="index.html" class="logo"><img src="img/miya.png"/></a>
+		<div class="cellapp">
+			<img src="img1/cellapp.png"/>
+			<p>
+				<a href="#" title="iPhone系列手机及iPad适用" id="apple"><img src="img1/iphone.png"/></a>
+			    <a href="#" title="三星小米索尼华为等android手机适用" id="android"><img src="img1/android.png"/></a>
+			</p>
+		</div>
+		<form >
+			<fieldset>
+				<div class="text">
+					<span id="sp1">登录蜜芽</span>
+				    <span id="sp2">已有蜜芽账号？</span>
+				    <a href="register.html">30秒注册</a>
+				</div>
+				<div class="phone">
+					<img src="img1/person.png" />
+					<input type="tel" placeholder="手机号" id="cell"/>
+				</div>
+				<span class="alert" id="jg1">请输入正确手机号</span>
+				
+				<label>密码：</label><input type="password" placeholder="请输入密码" id="pass"/>
+				<span class="alert" id="jg2">密码不正确</span>
+				
+				<div class="verify">
+					<label>验证码：</label><input type="text" placeholder="请输入验证码" id="txt"/>
+					<input type="text" value="DQxJ" id="code"></input>
+					<input type="button" value="刷新下一张" id="refresh" onclick="cal()">
+				</div>
+				<span class="alert" id="jg3">验证码不正确</span>
+				<input type="button" value="登录" id="btn"/>
+				
+				<div class="choose">
+					<span>使用以下账号登录:</span>
+					<a href="#" title="使用微信账号登录"><img src="img1/wechat.png" /></a>
+					<a href="#" title="使用新浪微博账号登录"><img src="img1/sina.png" /></a>
+				</div>
+			</fieldset>
+		</form>
+		<p class="copyright">Copyright ©2017 北京花旺在线商贸有限公司 Miyabaobei.com 保留一切权利。客服热线： 400-789-2000。京ICP证140430号 京ICP备14006215号</p>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script src="js/part-of-login.js"></script>
+</html>

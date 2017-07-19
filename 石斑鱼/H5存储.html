@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.css" />
+		<style>
+			.header{
+				height: 500px;
+				border: 1px solid black;
+			}
+			.div{
+				width: 180px;
+				height: 300px;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container header">
+			<p id="pp">我还不是会员,请点击注册</p><a class="btn btt btn-info">注册</a>
+			<div class="div">
+				昵称：<input type="text" id="txt" />
+			 	密码：<input type="text" id="tet" />
+			 	<button class="btn btn-info" id="bnn">申请</button>
+			 	<button class="btn btn-info" id="bn">登陆</button>
+			 	<br />
+			 	旧密码：<input type="text" id="t1" />
+			 	新密码：<input type="text" id="t2" />
+			 	确认新密码：<input type="text" id="t3" />
+			 	<input type="hidden" id="hide" />
+			 	<button class="btn btn-info" id="bnc">修改密码</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	<script>
+		$(".btt").click(function(){
+			$(".header").css("background","grey");
+		})
+		var txt=document.getElementById("txt");
+		var tet=document.getElementById("tet");
+		var bnn=document.getElementById("bnn");
+		var bn=document.getElementById("bn");
+		var pp=document.getElementById("pp");
+		var t1=document.getElementById("t1");
+		var t2=document.getElementById("t2");
+		var t3=document.getElementById("t3");
+		var bnc=document.getElementById("bnc");
+		bnn.onclick=function(){
+			var val=txt.value;
+			var pass=tet.value;
+			for(var i=0;i<localStorage.length;i++){
+				if(val==localStorage.key(i)){
+					alert("已有改昵称")
+					pass=localStorage.getItem(localStorage.key(i));
+				}
+			}
+			localStorage.setItem(val,pass);
+			alert('申请成功')
+		}
+		bn.onclick=function(){
+			var val=txt.value;
+			var pass=tet.value;
+			var hide=document.getElementById("hide");
+			for( var i=0;i<localStorage.length;i++){
+				if(val==localStorage.key(i) && pass==localStorage.getItem(localStorage.key(i))){
+					alert("登陆成功")
+					pp.innerHTML=val;
+					hide.value=pass;
+					console.log(hide.value)
+				}if(val==localStorage.key(i) && pass!=localStorage.getItem(localStorage.key(i))){
+					alert("密码错误")
+				}
+			}
+		}
+		bnc.onclick=function(){
+			var val=txt.value;
+			var pass=tet.value;
+			var hide=document.getElementById("hide");
+			t1.value=hide.value;
+			hide.value=pass;
+			if(t2.value!=t3.value){
+				alert("密码不一致")
+			}else{
+				hide.value=t2.value;
+				console.log(hide.value)
+				pass=hide.value;
+				localStorage.setItem(val,pass);
+//				console.log(pass)
+			}
+			pp.innerHTML="请登录";
+		}
+	</script>
+</html>
