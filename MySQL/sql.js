@@ -28,5 +28,6 @@ pool.getConnection(function(err,cont){
 	if(err) throw err;
 		console.log(data);
 	});
+	
 	cont.release(); 
 });
